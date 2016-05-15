@@ -1,0 +1,42 @@
+$num-letters: 14
+$angle-span: 90deg
+$angle-offset: -47deg
+
+=rotate-text($i)
+	transform: rotate($angle-span / $num-letters * $i + $angle-offset)
+
+body 
+	padding: 0
+	margin: 0
+
+@font-face
+	font-family: 'Avenir'
+	src:url('../avenir.otf')
+
+$font-stack: 'Courier', monospace
+
+.wrapper 
+	width: auto
+	text-align: center
+	font-family: Avenir
+
+.build-your-own
+	position: absolute
+	left: 49%
+
+	span
+		font: 40px $font-stack
+		height: 300px
+		position: absolute
+		width: 20px
+		left: 0px
+		top: 50px
+		transform-origin: bottom center	
+	
+.page-wrap 
+	width: 100vw
+	height: 100vh
+
+@for $i from 1 through $num-letters
+	.char#{$i} 
+		+rotate-text($i)

@@ -1,0 +1,70 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+@font-face {
+  font-family: "Avenir"; }
+.wrapper {
+  width: auto;
+  text-align: center;
+  font-family: Avenir; }
+
+.build-your-own {
+  position: absolute;
+  left: 49%; }
+  .build-your-own span {
+    font: 40px "Courier", monospace;
+    height: 300px;
+    position: absolute;
+    width: 20px;
+    left: 0px;
+    top: 50px;
+    transform-origin: bottom center; }
+
+.page-wrap {
+  width: 100vw;
+  height: 100vh; }
+
+.char1 {
+  transform: rotate(-40.57143deg); }
+
+.char2 {
+  transform: rotate(-34.14286deg); }
+
+.char3 {
+  transform: rotate(-27.71429deg); }
+
+.char4 {
+  transform: rotate(-21.28571deg); }
+
+.char5 {
+  transform: rotate(-14.85714deg); }
+
+.char6 {
+  transform: rotate(-8.42857deg); }
+
+.char7 {
+  transform: rotate(-2deg); }
+
+.char8 {
+  transform: rotate(4.42857deg); }
+
+.char9 {
+  transform: rotate(10.85714deg); }
+
+.char10 {
+  transform: rotate(17.28571deg); }
+
+.char11 {
+  transform: rotate(23.71429deg); }
+
+.char12 {
+  transform: rotate(30.14286deg); }
+
+.char13 {
+  transform: rotate(36.57143deg); }
+
+.char14 {
+  transform: rotate(43deg); }
+
+/*# sourceMappingURL=stylesheet.css.map */

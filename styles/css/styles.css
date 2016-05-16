@@ -3,6 +3,9 @@ body {
   margin: 0; }
 
 @font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir.ttf"); }
+@font-face {
   font-family: "FiraCode";
   src: url("../../fonts/FiraCode-Regular.otf");
   font-weight: normal;

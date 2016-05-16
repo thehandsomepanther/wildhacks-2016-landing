@@ -11,7 +11,7 @@ body
 
 @font-face
 	font-family: 'Avenir'
-	src: url('../../fonts/Avenir.otf')
+	src: url('../../fonts/Avenir.ttf')
 
 @font-face
 	font-family: 'FiraCode'
@@ -37,34 +37,25 @@ body
 	font-weight: 700
 	font-style: normal
 
-$font-stack: 'Avenir', 'FiraCode-Regular'
+$primary-font-stack: 'Avenir', sans-serif
+$secondary-font-stack: 'FiraCode-Regular', monospace
 
 .wrapper 
-	width: auto
+	width: 100vw
 	text-align: center
 	font-family: Avenir
 	position: absolute
 	top: 25%
-	left: 31%
 
 	#presents
 		font-size: 20px
-		font-family: Avenir
-	
-		#wildhacks
-			font-size: 0px
+		font-family: $primary-font-stack
 
 		#wild
 			color: #9fc9eb
-			font-size: 20px
 
 		#hacks
 			color: #cb9ac6
-			font-size: 20px
-
-		#blank
-			color: white
-			font-size: 0px
 
 		#year
 			color: #ffd05b
@@ -75,10 +66,10 @@ $font-stack: 'Avenir', 'FiraCode-Regular'
 
 	.build-your-own
 		position: absolute
-		left: 46%
+		left: 50%
 		top: -5%
 		font-size: 40px 
-		font-family: FiraCode
+		font-family: $secondary-font-stack
 
 		span
 			height: 300px

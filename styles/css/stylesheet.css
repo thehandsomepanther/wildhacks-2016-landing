@@ -4,7 +4,7 @@ body {
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../fonts/Avenir.otf"); }
+  src: url("../../fonts/Avenir.ttf"); }
 @font-face {
   font-family: "FiraCode";
   src: url("../../fonts/FiraCode-Regular.otf");
@@ -26,36 +26,28 @@ body {
   font-weight: 700;
   font-style: normal; }
 .wrapper {
-  width: auto;
+  width: 100vw;
   text-align: center;
   font-family: Avenir;
   position: absolute;
-  top: 25%;
-  left: 31%; }
+  top: 25%; }
   .wrapper #presents {
     font-size: 20px;
-    font-family: Avenir; }
-    .wrapper #presents #wildhacks {
-      font-size: 0px; }
+    font-family: "Avenir", sans-serif; }
     .wrapper #presents #wild {
-      color: #9fc9eb;
-      font-size: 20px; }
+      color: #9fc9eb; }
     .wrapper #presents #hacks {
-      color: #cb9ac6;
-      font-size: 20px; }
-    .wrapper #presents #blank {
-      color: white;
-      font-size: 0px; }
+      color: #cb9ac6; }
     .wrapper #presents #year {
       color: #ffd05b; }
     .wrapper #presents #pres {
       color: #70c9c0; }
   .wrapper .build-your-own {
     position: absolute;
-    left: 46%;
+    left: 50%;
     top: -5%;
     font-size: 40px;
-    font-family: FiraCode; }
+    font-family: "FiraCode-Regular", monospace; }
     .wrapper .build-your-own span {
       height: 300px;
       position: absolute;

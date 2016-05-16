@@ -11,7 +11,7 @@ body
 
 @font-face
 	font-family: 'Avenir'
-	src: url('../../fonts/Avenir.otf')
+	src: url('../../fonts/Avenir.ttf')
 
 @font-face
 	font-family: 'FiraCode'
@@ -54,7 +54,6 @@ $cosmic-latte: #fff8e7
 	background-color: $cosmic-latte
 	text-align: center
 	font-family: Avenir
-	z-index: 1
 	overflow: hidden
 
 	#presents
@@ -111,62 +110,27 @@ $cosmic-latte: #fff8e7
 		padding-top: 3vh
 		font-size: 6.5em
 		font-weight: 900
-
 		
-
-.redsquare
-	height: 42vh
+.images
+	height: 100vh
+	width: 100vw
+	top: 0
+	left: 0
 	position: absolute
-	left: 17%
-	top: 26%	
-	fill: $blue
 
-.orangesquare
-	fill: $blue
-	height: 42vh
-	transform: rotate(47deg)
-	position: absolute
-	left: 28%
-	top: 65%
+	svg
+		height: 60px
+		width: auto
 
-.bluesquare
-	height: 42vh
-	transform: rotate(47deg)
-	position: absolute
-	left: 72%
-	top: 8%
-
-.bluecord
-	height: 42vh
-	position: absolute
-	left: 15%
-	top: 57%
-	fill: $blue
-
-.orangecord
-	height: 42vh
-	position: absolute
-	transform: rotate(-110deg)
-	left: 60%
-	top: 2%
-
-.bluegate
-	height: 42vh
-	position: absolute
-	fill: $blue
-	left: 58%
-	top: 68%
-
-.redphone
-	height: 33vh
-	position: absolute
-	left: 68%
-	top: 63%
-	fill: $red
-
-.redmonitor
-	height: 33vh
-	position: absolute
-	left: 40%
-	top: 78%
-	fill: $red
+	.green
+		fill: $green
+	.purple
+		fill: $purple
+	.yellow
+		fill: $yellow
+	.orange
+		fill: $orange
+	.red
+		fill: $red
+	.blue
+		fill: $blue

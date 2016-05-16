@@ -4,7 +4,7 @@ body {
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../fonts/Avenir.ttf"); }
+  src: url("../../fonts/Avenir.otf"); }
 @font-face {
   font-family: "FiraCode";
   src: url("../../fonts/FiraCode-Regular.otf");
@@ -30,7 +30,9 @@ body {
   height: 100vh;
   background-color: #fff8e7;
   text-align: center;
-  font-family: Avenir; }
+  font-family: Avenir;
+  z-index: 1;
+  overflow: hidden; }
   .wrapper #presents {
     padding-top: 25vh;
     font-size: 20px;
@@ -46,8 +48,8 @@ body {
   .wrapper .build-your-own {
     position: absolute;
     left: 50%;
-    top: 22vh;
-    font-size: 35px;
+    top: 26vh;
+    font-size: 38px;
     font-family: "FiraCode-Regular", monospace; }
     .wrapper .build-your-own span {
       height: 300px;
@@ -99,38 +101,94 @@ body {
     .wrapper .build-your-own .char14 {
       color: #9fc9eb; }
     .wrapper .build-your-own .char1 {
-      transform: rotate(-41.57143deg); }
+      transform: rotate(-34.14286deg); }
     .wrapper .build-your-own .char2 {
-      transform: rotate(-35.14286deg); }
+      transform: rotate(-28.78571deg); }
     .wrapper .build-your-own .char3 {
-      transform: rotate(-28.71429deg); }
+      transform: rotate(-23.42857deg); }
     .wrapper .build-your-own .char4 {
-      transform: rotate(-22.28571deg); }
+      transform: rotate(-18.07143deg); }
     .wrapper .build-your-own .char5 {
-      transform: rotate(-15.85714deg); }
+      transform: rotate(-12.71429deg); }
     .wrapper .build-your-own .char6 {
-      transform: rotate(-9.42857deg); }
+      transform: rotate(-7.35714deg); }
     .wrapper .build-your-own .char7 {
-      transform: rotate(-3deg); }
+      transform: rotate(-2deg); }
     .wrapper .build-your-own .char8 {
-      transform: rotate(3.42857deg); }
+      transform: rotate(3.35714deg); }
     .wrapper .build-your-own .char9 {
-      transform: rotate(9.85714deg); }
+      transform: rotate(8.71429deg); }
     .wrapper .build-your-own .char10 {
-      transform: rotate(16.28571deg); }
+      transform: rotate(14.07143deg); }
     .wrapper .build-your-own .char11 {
-      transform: rotate(22.71429deg); }
+      transform: rotate(19.42857deg); }
     .wrapper .build-your-own .char12 {
-      transform: rotate(29.14286deg); }
+      transform: rotate(24.78571deg); }
     .wrapper .build-your-own .char13 {
-      transform: rotate(35.57143deg); }
+      transform: rotate(30.14286deg); }
     .wrapper .build-your-own .char14 {
-      transform: rotate(42deg); }
+      transform: rotate(35.5deg); }
+  .wrapper #hackathon {
+    color: #f16667;
+    padding-top: 3vh;
+    font-size: 6.5em;
+    font-weight: 900; }
 
-#hackathon {
-  color: #f16667;
-  padding-top: 5vh;
-  font-size: 6.5em;
-  font-weight: 900; }
+.redsquare {
+  height: 42vh;
+  position: absolute;
+  left: 17%;
+  top: 26%;
+  fill: #9fc9eb; }
 
-/*# sourceMappingURL=stylesheet.css.map */
+.orangesquare {
+  fill: #9fc9eb;
+  height: 42vh;
+  transform: rotate(47deg);
+  position: absolute;
+  left: 28%;
+  top: 65%; }
+
+.bluesquare {
+  height: 42vh;
+  transform: rotate(47deg);
+  position: absolute;
+  left: 72%;
+  top: 8%; }
+
+.bluecord {
+  height: 42vh;
+  position: absolute;
+  left: 15%;
+  top: 57%;
+  fill: #9fc9eb; }
+
+.orangecord {
+  height: 42vh;
+  position: absolute;
+  transform: rotate(-110deg);
+  left: 60%;
+  top: 2%; }
+
+.bluegate {
+  height: 42vh;
+  position: absolute;
+  fill: #9fc9eb;
+  left: 58%;
+  top: 68%; }
+
+.redphone {
+  height: 33vh;
+  position: absolute;
+  left: 68%;
+  top: 63%;
+  fill: #f16667; }
+
+.redmonitor {
+  height: 33vh;
+  position: absolute;
+  left: 40%;
+  top: 78%;
+  fill: #f16667; }
+
+/*# sourceMappingURL=styles.css.map */

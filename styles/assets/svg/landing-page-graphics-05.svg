@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;stroke:#F16667;stroke-width:10;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#F16667;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st2{fill:#F16667;}
-	.st3{fill:none;stroke:#F16667;stroke-width:11.7245;stroke-linejoin:round;stroke-miterlimit:10;}
-</style>
-<g>
-	<path class="st0" d="M413.1,361.1H186.9c-6.2,0-11.3-5.1-11.3-11.3V216.2c0-6.2,5.1-11.3,11.3-11.3h226.1c6.2,0,11.3,5.1,11.3,11.3
-		v133.6C424.4,356,419.3,361.1,413.1,361.1z"/>
-	<circle class="st2" cx="300" cy="342" r="5.2"/>
-	<polygon class="st0" points="332.8,395.1 267.2,395.1 277.2,361.1 322.8,361.1 	"/>
-</g>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><defs><style>.cls-1{fill:#f16667;}</style></defs><title>landing-page-graphics</title><path class="cls-1" d="M413.07,200H186.93A15.94,15.94,0,0,0,171,216.21V349.79A15.94,15.94,0,0,0,186.93,366h83.64l-8.11,27.62a5,5,0,0,0,4.8,6.38h65.5a5,5,0,0,0,4-2,5,5,0,0,0,.79-4.42L329.43,366h83.64A15.94,15.94,0,0,0,429,349.79V216.21A15.94,15.94,0,0,0,413.07,200Zm-87,190H273.93L281,366h38ZM419,349.79a5.94,5.94,0,0,1-5.93,6.21H186.93a5.94,5.94,0,0,1-5.93-6.21V216.21a5.94,5.94,0,0,1,5.93-6.21H413.07a5.94,5.94,0,0,1,5.93,6.21V349.79Z"/><circle class="cls-1" cx="300" cy="341.98" r="5.18"/></svg>

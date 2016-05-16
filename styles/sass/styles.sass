@@ -1,6 +1,6 @@
 $num-letters: 14
 $angle-span: 75deg
-$angle-offset: -39.5deg
+$angle-offset: -41deg
 
 =rotate-text($i)
 	transform: rotate($angle-span / $num-letters * $i + $angle-offset)
@@ -9,9 +9,9 @@ body
 	padding: 0
 	margin: 0
 
-@font-face
-	font-family: 'Avenir'
-	src: url('../../fonts/Avenir.ttf')
+// @font-face
+// 	font-family: 'Avenir'
+// 	src: url('../../fonts/Avenir.ttf')
 
 @font-face
 	font-family: 'FiraCode'
@@ -47,19 +47,29 @@ $yellow: #ffd05b
 $orange: #f79868
 $red: #f16667
 $cosmic-latte: #fff8e7
+$whitesmoke: #f5f5f5
+
+.logo
+	position: absolute
+
+	img
+		width: 100px
+		padding-left: 50px
+		padding-top: 40px
 
 .wrapper 
 	width: 100vw
 	height: 100vh
-	background-color: $cosmic-latte
+	background-color: $whitesmoke
 	text-align: center
-	font-family: Avenir
 	overflow: hidden
+	font-family: $primary-font-stack
+	z-index: 9
 
 	#presents
-		padding-top: 25vh
-		font-size: 20px
-		font-family: $primary-font-stack
+		padding-top: 15vh
+		font-size: 1.5rem
+		font-weight: 700
 
 		#wild
 			color: $blue
@@ -72,13 +82,13 @@ $cosmic-latte: #fff8e7
 
 	.build-your-own
 		position: absolute
-		left: 50%
-		top: 26vh
-		font-size: 38px 
+		left: 49%
+		top: 15vh
+		font-size: 3rem
 		font-family: $secondary-font-stack
 
 		span
-			height: 300px
+			height: 400px
 			position: absolute
 			width: 20px
 			left: 0px
@@ -107,30 +117,72 @@ $cosmic-latte: #fff8e7
 
 	#hackathon
 		color: $red
-		padding-top: 3vh
-		font-size: 6.5em
-		font-weight: 900
-		
-.images
-	height: 100vh
-	width: 100vw
-	top: 0
-	left: 0
+		font-size: 9rem
+		font-weight: 700
+		margin-bottom: 0px
+		margin-top: 10vh
+
+	form
+		input 
+			height: 40px
+			width: 30vw
+			font-family: FiraCode
+			font-size: 20px
+			line-height: 40px
+			padding-left: 10px
+			border-radius: 4px
+			border: 2px solid $green
+			color: $green
+
+		button
+			height: 46px
+			line-height: 40px
+			font-family: FiraCode
+			font-size: 20px	
+			color: $whitesmoke
+			border-radius: 4px
+			border: 2px solid $green
+			background-color: $green
+			padding-left: 20px
+			padding-right: 20px
+
+		button:hover
+			cursor: pointer
+
+svg
 	position: absolute
+	height: 60px
+	width: auto
 
-	svg
-		height: 60px
-		width: auto
+.chip
+	top: 200px
+	left: 50px
 
-	.green
-		fill: $green
-	.purple
-		fill: $purple
-	.yellow
-		fill: $yellow
-	.orange
-		fill: $orange
-	.red
-		fill: $red
-	.blue
-		fill: $blue
+.cord
+	top: 50vh
+	right: 20px
+
+.monitor
+	top: 20px
+	right: 20vw
+
+.phone
+	bottom: 50px
+	left: 150px
+
+.gate
+	bottom: 80px
+	right: 300px
+
+.green
+	fill: $green
+.purple
+	fill: $purple
+.yellow
+	fill: $yellow
+.orange
+	fill: $orange
+.red
+	fill: $red
+.blue
+	fill: $blue

@@ -27,11 +27,12 @@ body {
   font-style: normal; }
 .wrapper {
   width: 100vw;
+  height: 100vh;
+  background-color: #fff8e7;
   text-align: center;
-  font-family: Avenir;
-  position: absolute;
-  top: 25%; }
+  font-family: Avenir; }
   .wrapper #presents {
+    padding-top: 25vh;
     font-size: 20px;
     font-family: "Avenir", sans-serif; }
     .wrapper #presents #wild {
@@ -45,8 +46,8 @@ body {
   .wrapper .build-your-own {
     position: absolute;
     left: 50%;
-    top: -5%;
-    font-size: 40px;
+    top: 22vh;
+    font-size: 35px;
     font-family: "FiraCode-Regular", monospace; }
     .wrapper .build-your-own span {
       height: 300px;
@@ -128,10 +129,8 @@ body {
 
 #hackathon {
   color: #f16667;
+  padding-top: 5vh;
   font-size: 6.5em;
-  font-weight: 900;
-  position: relative;
-  top: 5px;
-  left: -12px; }
+  font-weight: 900; }
 
 /*# sourceMappingURL=stylesheet.css.map */

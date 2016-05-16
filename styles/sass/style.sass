@@ -40,35 +40,41 @@ body
 $primary-font-stack: 'Avenir', sans-serif
 $secondary-font-stack: 'FiraCode-Regular', monospace
 
+$green: #70c9c0
+$blue: #9fc9eb
+$purple: #cb9ac6
+$yellow: #ffd05b
+$orange: #f79868
+$red: #f16667
+$cosmic-latte: #fff8e7
+
 .wrapper 
 	width: 100vw
+	height: 100vh
+	background-color: $cosmic-latte
 	text-align: center
 	font-family: Avenir
-	position: absolute
-	top: 25%
 
 	#presents
+		padding-top: 25vh
 		font-size: 20px
 		font-family: $primary-font-stack
 
 		#wild
-			color: #9fc9eb
-
+			color: $blue
 		#hacks
-			color: #cb9ac6
-
+			color: $purple
 		#year
-			color: #ffd05b
-			
-		#pres 
-			color: #70c9c0
+			color: $yellow
+		#pres
+			color: $green
 		
 
 	.build-your-own
 		position: absolute
 		left: 50%
-		top: -5%
-		font-size: 40px 
+		top: 22vh
+		font-size: 35px 
 		font-family: $secondary-font-stack
 
 		span
@@ -81,21 +87,19 @@ $secondary-font-stack: 'FiraCode-Regular', monospace
 
 		@for $i from 1 through 5
 			.char#{$i}
-				color: #ffd05b
-
+				color: $yellow
 			.char6
-				color: #70c9c0
+				color: $green
 
 		@for $i from 7 through 10
 			.char#{$i}
-				color: #cb9ac6
-
+				color: $purple
 			.char11
-				color: #70c9c0
+				color: $green
 
 		@for $i from 12 through 14
 			.char#{$i}
-				color: #9fc9eb
+				color: $blue
 
 		@for $i from 1 through $num-letters
 			.char#{$i} 
@@ -103,12 +107,10 @@ $secondary-font-stack: 'FiraCode-Regular', monospace
 
 
 #hackathon
-	color: #f16667
+	color: $red
+	padding-top: 5vh
 	font-size: 6.5em
 	font-weight: 900
-	position: relative
-	top: 5px
-	left: -12px
 
 
 	

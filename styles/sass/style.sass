@@ -1,6 +1,6 @@
 $num-letters: 14
 $angle-span: 90deg
-$angle-offset: -47deg
+$angle-offset: -48deg
 
 =rotate-text($i)
 	transform: rotate($angle-span / $num-letters * $i + $angle-offset)
@@ -11,32 +11,111 @@ body
 
 @font-face
 	font-family: 'Avenir'
-	src:url('../avenir.otf')
+	src:url('../Avenir.otf')
 
-$font-stack: 'Courier', monospace
+@font-face
+	font-family: 'FiraCode-Bold'
+	src:url('../FiraCode-Bold.otf')
+
+@font-face
+	font-family: 'FiraCode-Light'
+	src:url('../FiraCode-Light.otf')
+
+@font-face
+	font-family: 'FiraCode-Medium'
+	src:url('../FiraCode-Medium.otf')
+
+@font-face
+	font-family: 'FiraCode-Regular'
+	src:url('../FiraCode-Regular.otf')
+
+@font-face
+	font-family: 'FiraCode-Retina'
+	src:url('../FiraCode-Retina.otf')
+
+$font-stack: 'Avenir', 'FiraCode-Regular'
 
 .wrapper 
 	width: auto
 	text-align: center
 	font-family: Avenir
-
-.build-your-own
 	position: absolute
-	left: 49%
+	top: 25%
+	left: 31%
 
-	span
-		font: 40px $font-stack
-		height: 300px
-		position: absolute
-		width: 20px
-		left: 0px
-		top: 50px
-		transform-origin: bottom center	
+	#presents
+		font-size: 20px
+		font-family: Avenir
 	
-.page-wrap 
-	width: 100vw
-	height: 100vh
 
-@for $i from 1 through $num-letters
-	.char#{$i} 
-		+rotate-text($i)
+		#wildhacks
+			font-size: 0px
+
+		#wild
+			color: #9fc9eb
+			font-size: 20px
+
+		#hacks
+			color: #cb9ac6
+			font-size: 20px
+
+		#blank
+			color: white
+			font-size: 0px
+
+		#year
+			color: #ffd05b
+			
+		#pres 
+			color: #70c9c0
+		
+
+	.build-your-own
+		position: absolute
+		left: 46%
+		top: -5%
+		font: 40px FiraCode-Bold
+		font-weight: 900
+
+		span
+			
+			height: 300px
+			position: absolute
+			width: 20px
+			left: 0px
+			top: 50px
+			transform-origin: bottom center	
+
+		@for $i from 1 through 5
+			.char#{$i}
+				color: #ffd05b
+
+			.char6
+				color: #70c9c0
+
+		@for $i from 7 through 10
+			.char#{$i}
+				color: #cb9ac6
+
+			.char11
+				color: #70c9c0
+
+		@for $i from 12 through 14
+			.char#{$i}
+				color: #9fc9eb
+
+		@for $i from 1 through $num-letters
+			.char#{$i} 
+				+rotate-text($i)
+
+
+#hackathon
+	color: #f16667
+	font-size: 6.5em
+	font-weight: 900
+	position: relative
+	top: 5px
+	left: -12px
+
+
+	

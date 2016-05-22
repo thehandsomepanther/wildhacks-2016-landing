@@ -332,5 +332,8 @@ svg {
     width: 90vw; }
   body .wrapper form button {
     margin-top: 10px; } }
+@media screen and (max-width: 360px) {
+  body .wrapper #hackathon {
+    font-size: 3rem; } }
 
 /*# sourceMappingURL=styles.css.map */

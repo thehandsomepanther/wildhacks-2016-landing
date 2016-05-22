@@ -2,8 +2,17 @@ $num-letters: 14
 $angle-span: 75deg
 $angle-offset: -41deg
 
-=rotate-text($i)
-	transform: rotate($angle-span / $num-letters * $i + $angle-offset)
+$angle-span-800: 60deg
+$angle-offset-800: -30deg
+
+$angle-span-621: 45deg
+$angle-offset-621: -24deg
+
+$angle-span-420: 35deg
+$angle-offset-420: -19deg
+
+=rotate-text($i, $angle, $offset)
+	transform: rotate($angle / $num-letters * $i + $offset)
 
 body 
 	padding: 0
@@ -58,6 +67,7 @@ $whitesmoke: #f5f5f5
 		padding-top: 40px
 
 .wrapper 
+	z-index: 100
 	width: 100vw
 	height: 100vh
 	background-color: $whitesmoke
@@ -113,7 +123,7 @@ $whitesmoke: #f5f5f5
 
 		@for $i from 1 through $num-letters
 			.char#{$i} 
-				+rotate-text($i)
+				+rotate-text($i, $angle-span, $angle-offset)
 
 	#hackathon
 		color: $red
@@ -186,3 +196,75 @@ svg
 	fill: $red
 .blue
 	fill: $blue
+
+
+@media screen and (max-width: 800px) 
+	body
+		.wrapper
+			.build-your-own
+				font-size: 2rem
+				top: 17vh
+				
+				@for $i from 1 through $num-letters
+					.char#{$i} 
+						+rotate-text($i, $angle-span-800, $angle-offset-800)
+
+			#hackathon
+				font-size: 7rem
+			form
+				input
+					width: 50vw
+		.cord 
+			top: 75vh
+		.chip
+			left: 5px
+		svg
+			height: 50px
+
+@media screen and (max-width: 621px)
+	body
+		.logo
+			img
+				width: 70px
+		.wrapper
+			.build-your-own
+				font-size: 1.5rem
+
+				@for $i from 1 through $num-letters
+					.char#{$i} 
+						+rotate-text($i, $angle-span-621, $angle-offset-621)
+
+			#hackathon
+				font-size: 5rem
+			form
+				margin-top: 10px
+
+				input
+					font-size: 16px
+				button
+					font-size: 16px
+
+@media screen and (max-width: 420px)
+	body
+		.wrapper
+			#presents
+				padding-top: 20vh
+			.build-your-own
+				font-size: 1rem
+				top: 24vh
+				@for $i from 1 through $num-letters
+					.char#{$i} 
+						+rotate-text($i, $angle-span-420, $angle-offset-420)
+
+			#hackathon
+				font-size: 4rem
+
+			form
+				input
+					width: 90vw
+				button
+					margin-top: 10px
+
+
+
+

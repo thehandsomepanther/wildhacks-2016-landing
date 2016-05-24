@@ -4,7 +4,64 @@ body {
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../fonts/Avenir.ttf"); }
+  src: url("../../fonts/Avenir LT 35 Light Oblique.ttf");
+  font-weight: 100;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 35 Light.ttf");
+  font-weight: 100;
+  font-style: normal; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 45 Book Oblique.ttf");
+  font-weight: 300;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 45 Book.ttf");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 55 Oblique.ttf");
+  font-weight: 400;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 55 Roman.ttf");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 65 Medium Oblique.ttf");
+  font-weight: 500;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 65 Medium.ttf");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 85 Heavy.ttf");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 85 Heavy Oblique.ttf");
+  font-weight: 700;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 95 Black Oblique.ttf");
+  font-weight: 900;
+  font-style: italic; }
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/Avenir LT 95 Black.ttf");
+  font-weight: 900;
+  font-style: normal; }
 @font-face {
   font-family: "FiraCode";
   src: url("../../fonts/FiraCode-Regular.otf");
@@ -26,123 +83,143 @@ body {
   font-weight: 700;
   font-style: normal; }
 .logo {
-  position: absolute; }
+  position: absolute;
+  z-index: 100; }
   .logo img {
     width: 100px;
     padding-left: 50px;
     padding-top: 40px; }
 
-.wrapper {
+#background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  overflow: hidden; }
+  #background .svg-wrap {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 15px; }
+  #background svg {
+    float: left;
+    width: 15px;
+    height: 15px; }
+
+#wrapper {
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: #f5f5f5;
   text-align: center;
   overflow: hidden;
   font-family: "Avenir", sans-serif;
-  z-index: 9; }
-  .wrapper #presents {
+  z-index: 9;
+  position: relative; }
+  #wrapper #presents {
     padding-top: 15vh;
     font-size: 1.5rem;
-    font-weight: 700; }
-    .wrapper #presents #wild {
+    font-weight: 400; }
+    #wrapper #presents #wild {
       color: #9fc9eb; }
-    .wrapper #presents #hacks {
+    #wrapper #presents #hacks {
       color: #cb9ac6; }
-    .wrapper #presents #year {
+    #wrapper #presents #year {
       color: #ffd05b; }
-    .wrapper #presents #pres {
+    #wrapper #presents #pres {
       color: #70c9c0; }
-  .wrapper .build-your-own {
+  #wrapper .build-your-own {
     position: absolute;
     left: 49%;
     top: 15vh;
     font-size: 3rem;
     font-family: "FiraCode-Regular", monospace; }
-    .wrapper .build-your-own span {
+    #wrapper .build-your-own span {
       height: 400px;
       position: absolute;
       width: 20px;
       left: 0px;
       top: 50px;
       transform-origin: bottom center; }
-    .wrapper .build-your-own .char1 {
+    #wrapper .build-your-own .char1 {
       color: #ffd05b; }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char2 {
+    #wrapper .build-your-own .char2 {
       color: #ffd05b; }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char3 {
+    #wrapper .build-your-own .char3 {
       color: #ffd05b; }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char4 {
+    #wrapper .build-your-own .char4 {
       color: #ffd05b; }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char5 {
+    #wrapper .build-your-own .char5 {
       color: #ffd05b; }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char7 {
+    #wrapper .build-your-own .char7 {
       color: #cb9ac6; }
-    .wrapper .build-your-own .char11 {
+    #wrapper .build-your-own .char11 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char8 {
+    #wrapper .build-your-own .char8 {
       color: #cb9ac6; }
-    .wrapper .build-your-own .char11 {
+    #wrapper .build-your-own .char11 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char9 {
+    #wrapper .build-your-own .char9 {
       color: #cb9ac6; }
-    .wrapper .build-your-own .char11 {
+    #wrapper .build-your-own .char11 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char10 {
+    #wrapper .build-your-own .char10 {
       color: #cb9ac6; }
-    .wrapper .build-your-own .char11 {
+    #wrapper .build-your-own .char11 {
       color: #70c9c0; }
-    .wrapper .build-your-own .char12 {
+    #wrapper .build-your-own .char12 {
       color: #9fc9eb; }
-    .wrapper .build-your-own .char13 {
+    #wrapper .build-your-own .char13 {
       color: #9fc9eb; }
-    .wrapper .build-your-own .char14 {
+    #wrapper .build-your-own .char14 {
       color: #9fc9eb; }
-    .wrapper .build-your-own .char1 {
+    #wrapper .build-your-own .char1 {
       transform: rotate(-35.64286deg); }
-    .wrapper .build-your-own .char2 {
+    #wrapper .build-your-own .char2 {
       transform: rotate(-30.28571deg); }
-    .wrapper .build-your-own .char3 {
+    #wrapper .build-your-own .char3 {
       transform: rotate(-24.92857deg); }
-    .wrapper .build-your-own .char4 {
+    #wrapper .build-your-own .char4 {
       transform: rotate(-19.57143deg); }
-    .wrapper .build-your-own .char5 {
+    #wrapper .build-your-own .char5 {
       transform: rotate(-14.21429deg); }
-    .wrapper .build-your-own .char6 {
+    #wrapper .build-your-own .char6 {
       transform: rotate(-8.85714deg); }
-    .wrapper .build-your-own .char7 {
+    #wrapper .build-your-own .char7 {
       transform: rotate(-3.5deg); }
-    .wrapper .build-your-own .char8 {
+    #wrapper .build-your-own .char8 {
       transform: rotate(1.85714deg); }
-    .wrapper .build-your-own .char9 {
+    #wrapper .build-your-own .char9 {
       transform: rotate(7.21429deg); }
-    .wrapper .build-your-own .char10 {
+    #wrapper .build-your-own .char10 {
       transform: rotate(12.57143deg); }
-    .wrapper .build-your-own .char11 {
+    #wrapper .build-your-own .char11 {
       transform: rotate(17.92857deg); }
-    .wrapper .build-your-own .char12 {
+    #wrapper .build-your-own .char12 {
       transform: rotate(23.28571deg); }
-    .wrapper .build-your-own .char13 {
+    #wrapper .build-your-own .char13 {
       transform: rotate(28.64286deg); }
-    .wrapper .build-your-own .char14 {
+    #wrapper .build-your-own .char14 {
       transform: rotate(34deg); }
-  .wrapper #hackathon {
+  #wrapper #hackathon {
     color: #f16667;
     font-size: 9rem;
     font-weight: 700;
     margin-bottom: 0px;
-    margin-top: 10vh; }
-  .wrapper form input {
+    margin-top: 20vh; }
+  #wrapper form input {
     height: 40px;
     width: 30vw;
     font-family: FiraCode;
@@ -152,7 +229,7 @@ body {
     border-radius: 4px;
     border: 2px solid #70c9c0;
     color: #70c9c0; }
-  .wrapper form button {
+  #wrapper form button {
     height: 46px;
     line-height: 40px;
     font-family: FiraCode;
@@ -163,33 +240,8 @@ body {
     background-color: #70c9c0;
     padding-left: 20px;
     padding-right: 20px; }
-  .wrapper form button:hover {
+  #wrapper form button:hover {
     cursor: pointer; }
-
-svg {
-  position: absolute;
-  height: 60px;
-  width: auto; }
-
-.chip {
-  top: 200px;
-  left: 50px; }
-
-.cord {
-  top: 50vh;
-  right: 20px; }
-
-.monitor {
-  top: 20px;
-  right: 20vw; }
-
-.phone {
-  bottom: 50px;
-  left: 150px; }
-
-.gate {
-  bottom: 80px;
-  right: 300px; }
 
 .green {
   fill: #70c9c0; }
@@ -208,6 +260,9 @@ svg {
 
 .blue {
   fill: #9fc9eb; }
+
+.dummy {
+  display: none; }
 
 @media screen and (max-width: 800px) {
   body .wrapper .build-your-own {

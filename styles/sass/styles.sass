@@ -22,7 +22,75 @@ body
 
 @font-face
 	font-family: 'Avenir'
-	src: url('../../fonts/Avenir.ttf')
+	src: url('../../fonts/Avenir LT 35 Light Oblique.ttf')
+	font-weight: 100
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 35 Light.ttf')
+	font-weight: 100
+	font-style: normal
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 45 Book Oblique.ttf')
+	font-weight: 300
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 45 Book.ttf')
+	font-weight: 300
+	font-style: normal
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 55 Oblique.ttf')
+	font-weight: 400
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 55 Roman.ttf')
+	font-weight: 400
+	font-style: normal
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 65 Medium Oblique.ttf')
+	font-weight: 500
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 65 Medium.ttf')
+	font-weight: 500
+	font-style: normal
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 85 Heavy.ttf')
+	font-weight: 700
+	font-style: normal
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 85 Heavy Oblique.ttf')
+	font-weight: 700
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 95 Black Oblique.ttf')
+	font-weight: 900
+	font-style: italic
+
+@font-face
+	font-family: 'Avenir'
+	src: url('../../fonts/Avenir LT 95 Black.ttf')
+	font-weight: 900
+	font-style: normal
 
 @font-face
 	font-family: 'FiraCode'
@@ -62,26 +130,49 @@ $whitesmoke: #f5f5f5
 
 .logo
 	position: absolute
+	z-index: 100
 
 	img
 		width: 100px
 		padding-left: 50px
 		padding-top: 40px
 
-.wrapper 
+#background
+	position: absolute
+	left: 0
+	top: 0
+	z-index: 1
+	height: 100vh
+	width: 100vw
+	background-color: $whitesmoke
+	overflow: hidden
+
+	.svg-wrap
+		display: inline-block
+		height: 15px
+		width: 15px
+		margin: 15px
+
+	svg
+		float: left
+		width: 15px
+		height: 15px
+		
+
+#wrapper 
 	z-index: 100
 	width: 100vw
 	height: 100vh
-	background-color: $whitesmoke
 	text-align: center
 	overflow: hidden
 	font-family: $primary-font-stack
 	z-index: 9
+	position: relative
 
 	#presents
 		padding-top: 15vh
 		font-size: 1.5rem
-		font-weight: 700
+		font-weight: 400
 
 		#wild
 			color: $blue
@@ -132,7 +223,7 @@ $whitesmoke: #f5f5f5
 		font-size: 9rem
 		font-weight: 700
 		margin-bottom: 0px
-		margin-top: 10vh
+		margin-top: 20vh
 
 	form
 		input 
@@ -161,31 +252,6 @@ $whitesmoke: #f5f5f5
 		button:hover
 			cursor: pointer
 
-svg
-	position: absolute
-	height: 60px
-	width: auto
-
-.chip
-	top: 200px
-	left: 50px
-
-.cord
-	top: 50vh
-	right: 20px
-
-.monitor
-	top: 20px
-	right: 20vw
-
-.phone
-	bottom: 50px
-	left: 150px
-
-.gate
-	bottom: 80px
-	right: 300px
-
 .green
 	fill: $green
 .purple
@@ -198,6 +264,9 @@ svg
 	fill: $red
 .blue
 	fill: $blue
+
+.dummy
+	display: none
 
 
 @media screen and (max-width: 800px) 

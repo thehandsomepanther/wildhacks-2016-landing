@@ -1,3 +1,4 @@
+
 $num-letters: 14
 $angle-span: 75deg
 $angle-offset: -41deg
@@ -20,34 +21,6 @@ body
 	padding: 0
 	margin: 0
 
-@font-face
-	font-family: 'Avenir'
-	src: url('../../fonts/Avenir.ttf')
-
-@font-face
-	font-family: 'FiraCode'
-	src: url('../../fonts/FiraCode-Regular.otf')
-	font-weight: normal
-	font-style: normal
-
-@font-face
-	font-family: 'FiraCode'
-	src: url('../../fonts/FiraCode-Light.otf')
-	font-weight: 100
-	font-style: normal
-
-@font-face
-	font-family: 'FiraCode'
-	src: url('../../fonts/FiraCode-Medium.otf')
-	font-weight: 500
-	font-style: normal
-
-@font-face
-	font-family: 'FiraCode'
-	src: url('../../fonts/FiraCode-Bold.otf')
-	font-weight: 700
-	font-style: normal
-
 $primary-font-stack: 'Avenir', sans-serif
 $secondary-font-stack: 'FiraCode-Regular', monospace
 
@@ -62,26 +35,117 @@ $whitesmoke: #f5f5f5
 
 .logo
 	position: absolute
+	z-index: 100
 
 	img
-		width: 100px
+		width: 80px
 		padding-left: 50px
 		padding-top: 40px
 
-.wrapper 
+#background
+	position: absolute
+	left: 0
+	top: 0
+	z-index: 1
+	height: 100vh
+	width: 100vw
+	background-color: $whitesmoke
+	overflow: hidden
+
+	// .svg-wrap
+	// 	display: inline-block
+	// 	height: 15px
+	// 	width: 15px
+	// 	margin: 15px
+
+	// svg
+	// 	float: left
+	// 	width: 15px
+	// 	height: 15px
+
+	.chip
+		height: 60px
+
+	.gate
+		height: 70px
+
+	.cord
+		height: 50px
+
+	.monitor
+		height: 60px
+
+	.phone
+		height: 60px
+
+	#chip-red
+		position: absolute
+		top: 30%
+		left: 8%
+		transform: rotate(45deg)
+
+	#chip-green
+		position: absolute
+		top: 20%
+		right: 10%
+		transform: rotate(32deg)
+
+	#chip-orange
+		position: absolute
+		bottom: 10%
+		left: 24%
+		transform: rotate(32deg)
+
+	#gate-purple
+		position: absolute
+		top: 8%
+		left: 23%
+		transform: rotate(-30deg)
+
+	#gate-blue
+		position: absolute
+		bottom: 8%
+		right: 20%
+		transform: rotate(30deg)
+
+	#cord-blue
+		position: absolute
+		bottom: 20%
+		left: 2%
+		transform: rotate(-20deg)
+
+	#cord-orange
+		position: absolute
+		top: 10%
+		right: 16%
+		transform: rotate(-140deg)
+
+	#monitor-purple
+		position: absolute
+		bottom: 7%
+		right: 35%
+		transform: rotate(20deg)
+
+	#phone-red
+		position: absolute
+		bottom: 25%
+		right: 10%
+		transform: rotate(-20deg)
+
+#wrapper 
 	z-index: 100
 	width: 100vw
 	height: 100vh
-	background-color: $whitesmoke
 	text-align: center
 	overflow: hidden
 	font-family: $primary-font-stack
 	z-index: 9
+	position: relative
 
 	#presents
 		padding-top: 15vh
 		font-size: 1.5rem
-		font-weight: 700
+		font-weight: 400
 
 		#wild
 			color: $blue
@@ -130,13 +194,12 @@ $whitesmoke: #f5f5f5
 	#hackathon
 		color: $red
 		font-size: 9rem
-		font-weight: 700
+		font-weight: 900
 		margin-bottom: 0px
-		margin-top: 10vh
+		margin-top: 20vh
 
 	form
-		input[type="email"] 
-			display: inline-block
+		input[type='email']
 			height: 40px
 			width: 30vw
 			font-family: FiraCode
@@ -146,14 +209,10 @@ $whitesmoke: #f5f5f5
 			border-radius: 4px
 			border: 2px solid $green
 			color: $green
-
 		.clear
 			display: inline-block
-
 			input[type='submit']
-				display: inline-block
 				height: 46px
-				width: 200px
 				line-height: 40px
 				font-family: FiraCode
 				font-size: 20px	
@@ -164,30 +223,8 @@ $whitesmoke: #f5f5f5
 				padding-left: 20px
 				padding-right: 20px
 
-svg
-	position: absolute
-	height: 60px
-	width: auto
-
-.chip
-	top: 200px
-	left: 50px
-
-.cord
-	top: 50vh
-	right: 20px
-
-.monitor
-	top: 20px
-	right: 20vw
-
-.phone
-	bottom: 50px
-	left: 150px
-
-.gate
-	bottom: 80px
-	right: 300px
+			input[type='submit']:hover
+				cursor: pointer
 
 .green
 	fill: $green
@@ -202,12 +239,15 @@ svg
 .blue
 	fill: $blue
 
+.dummy
+	display: none
+
 
 @media screen and (max-width: 800px) 
 	body
-		.wrapper
+		#wrapper
 			.build-your-own
-				font-size: 2rem
+				font-size: 2.5rem
 				top: 17vh
 				
 				@for $i from 1 through $num-letters
@@ -215,47 +255,105 @@ svg
 						+rotate-text($i, $angle-span-800, $angle-offset-800)
 
 			#hackathon
+				margin-top: 18vh
 				font-size: 7rem
 			form
-				input[type="email"]
+				input[type='email']
 					width: 50vw
-		.cord 
-			top: 75vh
-		.chip
-			left: 5px
-		svg
-			height: 50px
+		
+		#background
+			#chip-red
+				top: 25%
+				left: 8%
+
+			#chip-green
+				top: 10%
+				right: 10%
+
+			#chip-orange
+				bottom: 10%
+				left: 24%
+
+			#gate-purple
+				top: 3%
+				left: 40%
+
+			#gate-blue
+				bottom: 8%
+				right: 10%
+
+			#cord-blue
+				bottom: 8%
+				left: 0%
+
+			#cord-orange
+				display: none
+
+			#monitor-purple
+				bottom: 7%
+				right: 25%
+
+			#phone-red
+				display: none
 
 @media screen and (max-width: 621px)
 	body
 		.logo
 			img
 				width: 70px
-		.wrapper
+		#wrapper
 			.build-your-own
-				font-size: 1.5rem
+				font-size: 2rem
 
 				@for $i from 1 through $num-letters
 					.char#{$i} 
 						+rotate-text($i, $angle-span-621, $angle-offset-621)
 
 			#hackathon
+				margin-top: 15vh
 				font-size: 5rem
 			form
 				margin-top: 10px
 
-				input[type="email"]
+				input[type='email']
 					font-size: 16px
 				input[type='submit']
 					font-size: 16px
 
+		#background
+
+			#chip-red
+				display: none
+
+			#chip-green
+				display: none
+
+			#gate-purple
+				display: none
+
+			#cord-blue
+				bottom: 20%
+				left: -8%
+
+			#chip-orange
+				left: 22%
+
+			#monitor-purple
+				bottom: 16%
+				right: 16%
+
+			#gate-blue
+				right: 4%
+
+
+
 @media screen and (max-width: 420px)
 	body
-		.wrapper
+		#wrapper
 			#presents
 				padding-top: 20vh
 			.build-your-own
-				font-size: 1rem
+				font-size: 1.5rem
 				top: 24vh
 				@for $i from 1 through $num-letters
 					.char#{$i} 
@@ -265,18 +363,25 @@ svg
 				font-size: 4rem
 
 			form
-				input[type="email"]
+				input[type='email']
 					width: 90vw
 				input[type='submit']
 					margin-top: 10px
 
+		#background
+
+			#cord-blue
+				display: none
+
+			#monitor-purple
+				display: none
+
+			#gate-blue
+				display: none
+
 
 @media screen and (max-width: 360px) 
 	body 
-		.wrapper
+		#wrapper
 			#hackathon
 				font-size: 3rem
-
-
-
-

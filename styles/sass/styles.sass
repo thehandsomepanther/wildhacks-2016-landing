@@ -135,7 +135,8 @@ $whitesmoke: #f5f5f5
 		margin-top: 10vh
 
 	form
-		input 
+		input[type="email"] 
+			display: inline-block
 			height: 40px
 			width: 30vw
 			font-family: FiraCode
@@ -146,20 +147,22 @@ $whitesmoke: #f5f5f5
 			border: 2px solid $green
 			color: $green
 
-		button
-			height: 46px
-			line-height: 40px
-			font-family: FiraCode
-			font-size: 20px	
-			color: $whitesmoke
-			border-radius: 4px
-			border: 2px solid $green
-			background-color: $green
-			padding-left: 20px
-			padding-right: 20px
+		.clear
+			display: inline-block
 
-		button:hover
-			cursor: pointer
+			input[type='submit']
+				display: inline-block
+				height: 46px
+				width: 200px
+				line-height: 40px
+				font-family: FiraCode
+				font-size: 20px	
+				color: $whitesmoke
+				border-radius: 4px
+				border: 2px solid $green
+				background-color: $green
+				padding-left: 20px
+				padding-right: 20px
 
 svg
 	position: absolute
@@ -214,7 +217,7 @@ svg
 			#hackathon
 				font-size: 7rem
 			form
-				input
+				input[type="email"]
 					width: 50vw
 		.cord 
 			top: 75vh
@@ -241,9 +244,9 @@ svg
 			form
 				margin-top: 10px
 
-				input
+				input[type="email"]
 					font-size: 16px
-				button
+				input[type='submit']
 					font-size: 16px
 
 @media screen and (max-width: 420px)
@@ -262,9 +265,9 @@ svg
 				font-size: 4rem
 
 			form
-				input
+				input[type="email"]
 					width: 90vw
-				button
+				input[type='submit']
 					margin-top: 10px
 
 

@@ -142,7 +142,8 @@ body {
     font-weight: 700;
     margin-bottom: 0px;
     margin-top: 10vh; }
-  .wrapper form input {
+  .wrapper form input[type="email"] {
+    display: inline-block;
     height: 40px;
     width: 30vw;
     font-family: FiraCode;
@@ -152,19 +153,21 @@ body {
     border-radius: 4px;
     border: 2px solid #70c9c0;
     color: #70c9c0; }
-  .wrapper form button {
-    height: 46px;
-    line-height: 40px;
-    font-family: FiraCode;
-    font-size: 20px;
-    color: #f5f5f5;
-    border-radius: 4px;
-    border: 2px solid #70c9c0;
-    background-color: #70c9c0;
-    padding-left: 20px;
-    padding-right: 20px; }
-  .wrapper form button:hover {
-    cursor: pointer; }
+  .wrapper form .clear {
+    display: inline-block; }
+    .wrapper form .clear input[type='submit'] {
+      display: inline-block;
+      height: 46px;
+      width: 200px;
+      line-height: 40px;
+      font-family: FiraCode;
+      font-size: 20px;
+      color: #f5f5f5;
+      border-radius: 4px;
+      border: 2px solid #70c9c0;
+      background-color: #70c9c0;
+      padding-left: 20px;
+      padding-right: 20px; }
 
 svg {
   position: absolute;
@@ -243,7 +246,7 @@ svg {
       transform: rotate(30deg); }
   body .wrapper #hackathon {
     font-size: 7rem; }
-  body .wrapper form input {
+  body .wrapper form input[type="email"] {
     width: 50vw; }
   body .cord {
     top: 75vh; }
@@ -288,9 +291,9 @@ svg {
     font-size: 5rem; }
   body .wrapper form {
     margin-top: 10px; }
-    body .wrapper form input {
+    body .wrapper form input[type="email"] {
       font-size: 16px; }
-    body .wrapper form button {
+    body .wrapper form input[type='submit'] {
       font-size: 16px; } }
 @media screen and (max-width: 420px) {
   body .wrapper #presents {
@@ -328,9 +331,9 @@ svg {
       transform: rotate(16deg); }
   body .wrapper #hackathon {
     font-size: 4rem; }
-  body .wrapper form input {
+  body .wrapper form input[type="email"] {
     width: 90vw; }
-  body .wrapper form button {
+  body .wrapper form input[type='submit'] {
     margin-top: 10px; } }
 @media screen and (max-width: 360px) {
   body .wrapper #hackathon {

@@ -68,6 +68,11 @@ body {
       color: #ffd05b; }
     #wrapper #presents-wrapper #presents #pres {
       color: #70c9c0; }
+  #wrapper #dummy {
+    position: relative;
+    height: 100px;
+    width: 40vw;
+    margin: 0 auto; }
   #wrapper .build-your-own {
     position: absolute;
     left: 49%;
@@ -152,8 +157,7 @@ body {
     #wrapper .build-your-own #char14 {
       transform: rotate(34deg); }
   #wrapper #hackathon-wrapper {
-    margin-bottom: 0px;
-    margin-top: 20vh; }
+    margin-bottom: 0px; }
     #wrapper #hackathon-wrapper #hackathon {
       color: #f16667;
       font-size: 9rem;
@@ -183,29 +187,22 @@ body {
       padding-right: 20px; }
     #wrapper form .clear input[type='submit']:hover {
       cursor: pointer; }
-
-.green {
-  fill: #70c9c0; }
-
-.purple {
-  fill: #cb9ac6; }
-
-.yellow {
-  fill: #ffd05b; }
-
-.orange {
-  fill: #f79868; }
-
-.red {
-  fill: #f16667; }
-
-.blue {
-  fill: #9fc9eb; }
-
-.dummy {
-  display: none; }
+  #wrapper form #form-dummy {
+    height: 20px;
+    width: 50vw;
+    position: relative;
+    text-align: center;
+    margin: 0 auto; }
 
 @media screen and (max-width: 800px) {
+  body #background .svg-wrap {
+    display: inline-block;
+    height: 60px;
+    width: 90px; }
+  body #background svg {
+    float: left;
+    width: 80px;
+    height: 80px; }
   body #wrapper .build-your-own {
     font-size: 2.5rem;
     top: 17vh; }
@@ -237,13 +234,19 @@ body {
       transform: rotate(25.71429deg); }
     body #wrapper .build-your-own #char14 {
       transform: rotate(30deg); }
-  body #wrapper #hackathon-wrapper {
-    margin-top: 18vh; }
-    body #wrapper #hackathon-wrapper #hackathon {
-      font-size: 7rem; }
+  body #wrapper #hackathon-wrapper #hackathon {
+    font-size: 7rem; }
   body #wrapper form input[type='email'] {
     width: 50vw; } }
 @media screen and (max-width: 621px) {
+  body #background .svg-wrap {
+    display: inline-block;
+    height: 40px;
+    width: 70px; }
+  body #background svg {
+    float: left;
+    width: 60px;
+    height: 60px; }
   body .logo img {
     width: 70px; }
   body #wrapper .build-your-own {
@@ -276,10 +279,8 @@ body {
       transform: rotate(17.78571deg); }
     body #wrapper .build-your-own #char14 {
       transform: rotate(21deg); }
-  body #wrapper #hackathon-wrapper {
-    margin-top: 15vh; }
-    body #wrapper #hackathon-wrapper #hackathon {
-      font-size: 5rem; }
+  body #wrapper #hackathon-wrapper #hackathon {
+    font-size: 5rem; }
   body #wrapper form {
     margin-top: 10px; }
     body #wrapper form input[type='email'] {
@@ -287,7 +288,15 @@ body {
     body #wrapper form input[type='submit'] {
       font-size: 16px; } }
 @media screen and (max-width: 420px) {
-  body #wrapper #presents {
+  body #background .svg-wrap {
+    display: inline-block;
+    height: 50px;
+    width: 40px; }
+  body #background svg {
+    float: left;
+    width: 40px;
+    height: 40px; }
+  body #wrapper #presents-wrapper {
     padding-top: 20vh; }
   body #wrapper .build-your-own {
     font-size: 1.5rem;
@@ -322,10 +331,12 @@ body {
       transform: rotate(16deg); }
   body #wrapper #hackathon-wrapper #hackathon {
     font-size: 4rem; }
-  body #wrapper form input[type='email'] {
-    width: 90vw; }
-  body #wrapper form input[type='submit'] {
-    margin-top: 10px; } }
+  body #wrapper #mc_embed_signup form #mce-EMAIL {
+    width: 90vw;
+    margin-bottom: 20px; }
+  body #wrapper #mc_embed_signup form #mc-embedded-subscribe {
+    margin-top: 10px;
+    margin-bottom: 20px; } }
 @media screen and (max-width: 360px) {
   body #wrapper #hackathon-wrapper #hackathon {
     font-size: 3rem; } }

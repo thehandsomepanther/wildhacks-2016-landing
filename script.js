@@ -30,80 +30,80 @@ var window_center = {
 var radians_to_degrees = 180/Math.PI;
 
 var angle_noise = 25;
-var position_noise = 30;
+var position_noise_x = 20;
+var position_noise_y = 20;
 
 var screen_elements = [
   document.getElementById("presents").getBoundingClientRect(),
-  document.getElementById("char1").getBoundingClientRect(),
-  document.getElementById("char2").getBoundingClientRect(),
-  document.getElementById("char3").getBoundingClientRect(),
-  document.getElementById("char4").getBoundingClientRect(),
-  document.getElementById("char5").getBoundingClientRect(),
-  document.getElementById("char6").getBoundingClientRect(),
-  document.getElementById("char7").getBoundingClientRect(),
-  document.getElementById("char8").getBoundingClientRect(),
-  document.getElementById("char9").getBoundingClientRect(),
-  document.getElementById("char10").getBoundingClientRect(),
-  document.getElementById("char11").getBoundingClientRect(),
-  document.getElementById("char12").getBoundingClientRect(),
-  document.getElementById("char13").getBoundingClientRect(),
-  document.getElementById("char14").getBoundingClientRect(),
+  document.getElementById("dummy").getBoundingClientRect(),
   document.getElementById("hackathon").getBoundingClientRect(),
   document.getElementById("mce-EMAIL").getBoundingClientRect(),
-  document.getElementById("mc-embedded-subscribe").getBoundingClientRect()
+  document.getElementById("mc-embedded-subscribe").getBoundingClientRect(),
+  document.getElementById("form-dummy").getBoundingClientRect()
 ]
 
+function createBackground() {
+  // insert here a way to clear the entire background
 
+  for (var i = 0; i < 500; i++){
+    var rand_confetti = Math.floor(Math.random() * 10) % confettis.length;
 
-for (var i = 0; i < 500; i++){
-  var rand_confetti = Math.floor(Math.random() * 10) % confettis.length;
+    var new_confetti = confettis[rand_confetti].cloneNode(true);
+    new_confetti.id = "new-confetti";
 
-  var new_confetti = confettis[rand_confetti].cloneNode(true);
-  new_confetti.id = "new-confetti";
+    var rand_color = Math.floor(Math.random() * 10) % colors.length;
+    new_confetti.className += " " + colors[rand_color];
 
-  var rand_color = Math.floor(Math.random() * 10) % colors.length;
-  new_confetti.className += " " + colors[rand_color];
+    document.getElementById("background").appendChild(new_confetti);
 
-  document.getElementById("background").appendChild(new_confetti);
+    var rect = new_confetti.getBoundingClientRect();
 
-  var rect = new_confetti.getBoundingClientRect();
-
-  if ( screen_elements.map(
-    function(a) {
-      return !(
-        ((a.top + a.height) < (rect.top)) ||
-        (a.top > (rect.top + rect.height)) ||
-        ((a.left + a.width) < rect.left) ||
-        (a.left > (rect.left + rect.width))
+    if ( screen_elements.map(
+      function(a) {
+        return !(
+          ((a.top + a.height) < (rect.top)) ||
+          (a.top > (rect.top + rect.height)) ||
+          ((a.left + a.width) < rect.left) ||
+          (a.left > (rect.left + rect.width))
+        );
+      }
+    ).reduce(or) ) {
+      var this_confetti = document.getElementById("new-confetti");
+      this_confetti.removeChild(
+        this_confetti.getElementsByTagName("svg")[0]
       );
+    } else {
+      var rect_center = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2
+      }
+
+      var vector = {
+        x: window_center.x - rect_center.x,
+        y: window_center.y - rect_center.y
+      }
+
+      var position_adjustment = Math.floor(Math.random() * 100) % position_noise_x - position_noise_x;
+
+      if (rect.top % (rect.height * 2)) {
+        // rect.left -= 1.5 * rect.width;
+      }
+
+      new_confetti.style.marginLeft = -position_adjustment + "px";
+      position_adjustment = Math.floor(Math.random() * 100) % position_noise_y - position_noise_y;
+      new_confetti.style.marginTop = position_adjustment + "px";
+
+      var angle_adjustment = 0;
+      var angle = Math.atan2(vector.y, vector.x) * radians_to_degrees + 270 + angle_adjustment;
+
+      // var angle_adjustment = Math.floor(Math.random() * 100) % angle_noise - angle_noise;
+      new_confetti.style.transform = "rotate(" + angle + "deg)";
     }
-  ).reduce(or) ) {
-    var this_confetti = document.getElementById("new-confetti");
-    this_confetti.removeChild(
-      this_confetti.getElementsByTagName("svg")[0]
-    );
-  } else {
-    var rect_center = {
-      x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2
-    }
 
-    var vector = {
-      x: window_center.x - rect_center.x,
-      y: window_center.y - rect_center.y
-    }
-
-    // var angle_adjustment = Math.floor(Math.random() * 100) % angle_noise - angle_noise;
-    var angle_adjustment = 0;
-    var angle = Math.atan2(vector.y, vector.x) * radians_to_degrees + 270 + angle_adjustment;
-
-    new_confetti.style.transform = "rotate(" + angle + "deg)";
-
-    var position_adjustment = Math.floor(Math.random() * 100) % position_noise - position_noise;
-    new_confetti.style.marginLeft = -position_adjustment + "px";
-    position_adjustment = position_noise - Math.floor(Math.random() * 100) % position_noise;
-    new_confetti.style.marginTop = position_adjustment + "px";
+    new_confetti.removeAttribute("id")
   }
-
-  new_confetti.removeAttribute("id")
 }
+
+createBackground();
+
+// window.addEventListener("resize", createBackground);

@@ -1,79 +1,51 @@
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
 
-.logo {
+#logo {
   position: absolute;
   z-index: 100; }
-  .logo img {
+  #logo img {
     width: 80px;
     padding-left: 50px;
     padding-top: 40px; }
 
 #background {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -10vw;
+  top: -10vh;
   z-index: 1;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f5f5f5;
-  overflow: hidden; }
-  #background .chip {
-    height: 60px; }
-  #background .gate {
-    height: 70px; }
-  #background .cord {
-    height: 50px; }
-  #background .monitor {
-    height: 60px; }
-  #background .phone {
-    height: 60px; }
-  #background #chip-red {
-    position: absolute;
-    top: 30%;
-    left: 8%;
-    transform: rotate(45deg); }
-  #background #chip-green {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    transform: rotate(32deg); }
-  #background #chip-orange {
-    position: absolute;
-    bottom: 10%;
-    left: 24%;
-    transform: rotate(32deg); }
-  #background #gate-purple {
-    position: absolute;
-    top: 8%;
-    left: 23%;
-    transform: rotate(-30deg); }
-  #background #gate-blue {
-    position: absolute;
-    bottom: 8%;
-    right: 20%;
-    transform: rotate(30deg); }
-  #background #cord-blue {
-    position: absolute;
-    bottom: 20%;
-    left: 2%;
-    transform: rotate(-20deg); }
-  #background #cord-orange {
-    position: absolute;
-    top: 10%;
-    right: 16%;
-    transform: rotate(-140deg); }
-  #background #monitor-purple {
-    position: absolute;
-    bottom: 7%;
-    right: 35%;
-    transform: rotate(20deg); }
-  #background #phone-red {
-    position: absolute;
-    bottom: 25%;
-    right: 10%;
-    transform: rotate(-20deg); }
+  height: 120vh;
+  width: 120vw;
+  background-color: #f5f5f5; }
+  #background #confetti-1,
+  #background #confetti-2,
+  #background #confetti-3,
+  #background #confetti-4 {
+    display: none; }
+  #background .svg-wrap {
+    display: inline-block;
+    height: 70px;
+    width: 100px; }
+  #background svg {
+    float: left;
+    width: 90px;
+    height: 90px; }
+  #background .green {
+    fill: #70c9c0; }
+  #background .blue {
+    fill: #9fc9eb; }
+  #background .yellow {
+    fill: #ffd05b; }
+  #background .purple {
+    fill: #cb9ac6; }
+  #background .orange {
+    fill: #f79868; }
+  #background .red {
+    fill: #f16667; }
 
 #wrapper {
   z-index: 100;
@@ -84,17 +56,17 @@ body {
   font-family: "Avenir", sans-serif;
   z-index: 9;
   position: relative; }
-  #wrapper #presents {
+  #wrapper #presents-wrapper {
     padding-top: 15vh;
     font-size: 1.5rem;
     font-weight: 400; }
-    #wrapper #presents #wild {
+    #wrapper #presents-wrapper #presents #wild {
       color: #9fc9eb; }
-    #wrapper #presents #hacks {
+    #wrapper #presents-wrapper #presents #hacks {
       color: #cb9ac6; }
-    #wrapper #presents #year {
+    #wrapper #presents-wrapper #presents #year {
       color: #ffd05b; }
-    #wrapper #presents #pres {
+    #wrapper #presents-wrapper #presents #pres {
       color: #70c9c0; }
   #wrapper .build-your-own {
     position: absolute;
@@ -109,82 +81,83 @@ body {
       left: 0px;
       top: 50px;
       transform-origin: bottom center; }
-    #wrapper .build-your-own .char1 {
+    #wrapper .build-your-own #char1 {
       color: #ffd05b; }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char2 {
+    #wrapper .build-your-own #char2 {
       color: #ffd05b; }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char3 {
+    #wrapper .build-your-own #char3 {
       color: #ffd05b; }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char4 {
+    #wrapper .build-your-own #char4 {
       color: #ffd05b; }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char5 {
+    #wrapper .build-your-own #char5 {
       color: #ffd05b; }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char7 {
+    #wrapper .build-your-own #char7 {
       color: #cb9ac6; }
-    #wrapper .build-your-own .char11 {
+    #wrapper .build-your-own #char11 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char8 {
+    #wrapper .build-your-own #char8 {
       color: #cb9ac6; }
-    #wrapper .build-your-own .char11 {
+    #wrapper .build-your-own #char11 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char9 {
+    #wrapper .build-your-own #char9 {
       color: #cb9ac6; }
-    #wrapper .build-your-own .char11 {
+    #wrapper .build-your-own #char11 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char10 {
+    #wrapper .build-your-own #char10 {
       color: #cb9ac6; }
-    #wrapper .build-your-own .char11 {
+    #wrapper .build-your-own #char11 {
       color: #70c9c0; }
-    #wrapper .build-your-own .char12 {
+    #wrapper .build-your-own #char12 {
       color: #9fc9eb; }
-    #wrapper .build-your-own .char13 {
+    #wrapper .build-your-own #char13 {
       color: #9fc9eb; }
-    #wrapper .build-your-own .char14 {
+    #wrapper .build-your-own #char14 {
       color: #9fc9eb; }
-    #wrapper .build-your-own .char1 {
+    #wrapper .build-your-own #char1 {
       transform: rotate(-35.64286deg); }
-    #wrapper .build-your-own .char2 {
+    #wrapper .build-your-own #char2 {
       transform: rotate(-30.28571deg); }
-    #wrapper .build-your-own .char3 {
+    #wrapper .build-your-own #char3 {
       transform: rotate(-24.92857deg); }
-    #wrapper .build-your-own .char4 {
+    #wrapper .build-your-own #char4 {
       transform: rotate(-19.57143deg); }
-    #wrapper .build-your-own .char5 {
+    #wrapper .build-your-own #char5 {
       transform: rotate(-14.21429deg); }
-    #wrapper .build-your-own .char6 {
+    #wrapper .build-your-own #char6 {
       transform: rotate(-8.85714deg); }
-    #wrapper .build-your-own .char7 {
+    #wrapper .build-your-own #char7 {
       transform: rotate(-3.5deg); }
-    #wrapper .build-your-own .char8 {
+    #wrapper .build-your-own #char8 {
       transform: rotate(1.85714deg); }
-    #wrapper .build-your-own .char9 {
+    #wrapper .build-your-own #char9 {
       transform: rotate(7.21429deg); }
-    #wrapper .build-your-own .char10 {
+    #wrapper .build-your-own #char10 {
       transform: rotate(12.57143deg); }
-    #wrapper .build-your-own .char11 {
+    #wrapper .build-your-own #char11 {
       transform: rotate(17.92857deg); }
-    #wrapper .build-your-own .char12 {
+    #wrapper .build-your-own #char12 {
       transform: rotate(23.28571deg); }
-    #wrapper .build-your-own .char13 {
+    #wrapper .build-your-own #char13 {
       transform: rotate(28.64286deg); }
-    #wrapper .build-your-own .char14 {
+    #wrapper .build-your-own #char14 {
       transform: rotate(34deg); }
-  #wrapper #hackathon {
-    color: #f16667;
-    font-size: 9rem;
-    font-weight: 900;
+  #wrapper #hackathon-wrapper {
     margin-bottom: 0px;
     margin-top: 20vh; }
+    #wrapper #hackathon-wrapper #hackathon {
+      color: #f16667;
+      font-size: 9rem;
+      font-weight: 900; }
   #wrapper form input[type='email'] {
     height: 40px;
     width: 30vw;
@@ -236,170 +209,125 @@ body {
   body #wrapper .build-your-own {
     font-size: 2.5rem;
     top: 17vh; }
-    body #wrapper .build-your-own .char1 {
+    body #wrapper .build-your-own #char1 {
       transform: rotate(-25.71429deg); }
-    body #wrapper .build-your-own .char2 {
+    body #wrapper .build-your-own #char2 {
       transform: rotate(-21.42857deg); }
-    body #wrapper .build-your-own .char3 {
+    body #wrapper .build-your-own #char3 {
       transform: rotate(-17.14286deg); }
-    body #wrapper .build-your-own .char4 {
+    body #wrapper .build-your-own #char4 {
       transform: rotate(-12.85714deg); }
-    body #wrapper .build-your-own .char5 {
+    body #wrapper .build-your-own #char5 {
       transform: rotate(-8.57143deg); }
-    body #wrapper .build-your-own .char6 {
+    body #wrapper .build-your-own #char6 {
       transform: rotate(-4.28571deg); }
-    body #wrapper .build-your-own .char7 {
+    body #wrapper .build-your-own #char7 {
       transform: rotate(0deg); }
-    body #wrapper .build-your-own .char8 {
+    body #wrapper .build-your-own #char8 {
       transform: rotate(4.28571deg); }
-    body #wrapper .build-your-own .char9 {
+    body #wrapper .build-your-own #char9 {
       transform: rotate(8.57143deg); }
-    body #wrapper .build-your-own .char10 {
+    body #wrapper .build-your-own #char10 {
       transform: rotate(12.85714deg); }
-    body #wrapper .build-your-own .char11 {
+    body #wrapper .build-your-own #char11 {
       transform: rotate(17.14286deg); }
-    body #wrapper .build-your-own .char12 {
+    body #wrapper .build-your-own #char12 {
       transform: rotate(21.42857deg); }
-    body #wrapper .build-your-own .char13 {
+    body #wrapper .build-your-own #char13 {
       transform: rotate(25.71429deg); }
-    body #wrapper .build-your-own .char14 {
+    body #wrapper .build-your-own #char14 {
       transform: rotate(30deg); }
-  body #wrapper #hackathon {
-    margin-top: 18vh;
-    font-size: 7rem; }
+  body #wrapper #hackathon-wrapper {
+    margin-top: 18vh; }
+    body #wrapper #hackathon-wrapper #hackathon {
+      font-size: 7rem; }
   body #wrapper form input[type='email'] {
-    width: 50vw; }
-  body #background #chip-red {
-    top: 25%;
-    left: 8%; }
-  body #background #chip-green {
-    top: 10%;
-    right: 10%; }
-  body #background #chip-orange {
-    bottom: 10%;
-    left: 24%; }
-  body #background #gate-purple {
-    top: 3%;
-    left: 40%; }
-  body #background #gate-blue {
-    bottom: 8%;
-    right: 10%; }
-  body #background #cord-blue {
-    bottom: 8%;
-    left: 0%; }
-  body #background #cord-orange {
-    display: none; }
-  body #background #monitor-purple {
-    bottom: 7%;
-    right: 25%; }
-  body #background #phone-red {
-    display: none; } }
+    width: 50vw; } }
 @media screen and (max-width: 621px) {
   body .logo img {
     width: 70px; }
   body #wrapper .build-your-own {
     font-size: 2rem; }
-    body #wrapper .build-your-own .char1 {
+    body #wrapper .build-your-own #char1 {
       transform: rotate(-20.78571deg); }
-    body #wrapper .build-your-own .char2 {
+    body #wrapper .build-your-own #char2 {
       transform: rotate(-17.57143deg); }
-    body #wrapper .build-your-own .char3 {
+    body #wrapper .build-your-own #char3 {
       transform: rotate(-14.35714deg); }
-    body #wrapper .build-your-own .char4 {
+    body #wrapper .build-your-own #char4 {
       transform: rotate(-11.14286deg); }
-    body #wrapper .build-your-own .char5 {
+    body #wrapper .build-your-own #char5 {
       transform: rotate(-7.92857deg); }
-    body #wrapper .build-your-own .char6 {
+    body #wrapper .build-your-own #char6 {
       transform: rotate(-4.71429deg); }
-    body #wrapper .build-your-own .char7 {
+    body #wrapper .build-your-own #char7 {
       transform: rotate(-1.5deg); }
-    body #wrapper .build-your-own .char8 {
+    body #wrapper .build-your-own #char8 {
       transform: rotate(1.71429deg); }
-    body #wrapper .build-your-own .char9 {
+    body #wrapper .build-your-own #char9 {
       transform: rotate(4.92857deg); }
-    body #wrapper .build-your-own .char10 {
+    body #wrapper .build-your-own #char10 {
       transform: rotate(8.14286deg); }
-    body #wrapper .build-your-own .char11 {
+    body #wrapper .build-your-own #char11 {
       transform: rotate(11.35714deg); }
-    body #wrapper .build-your-own .char12 {
+    body #wrapper .build-your-own #char12 {
       transform: rotate(14.57143deg); }
-    body #wrapper .build-your-own .char13 {
+    body #wrapper .build-your-own #char13 {
       transform: rotate(17.78571deg); }
-    body #wrapper .build-your-own .char14 {
+    body #wrapper .build-your-own #char14 {
       transform: rotate(21deg); }
-  body #wrapper #hackathon {
-    margin-top: 15vh;
-    font-size: 5rem; }
+  body #wrapper #hackathon-wrapper {
+    margin-top: 15vh; }
+    body #wrapper #hackathon-wrapper #hackathon {
+      font-size: 5rem; }
   body #wrapper form {
     margin-top: 10px; }
     body #wrapper form input[type='email'] {
       font-size: 16px; }
     body #wrapper form input[type='submit'] {
-      font-size: 16px; }
-  body #background #chip-red {
-    display: none; }
-  body #background #chip-green {
-    display: none; }
-  body #background #gate-purple {
-    display: none; }
-  body #background #cord-blue {
-    bottom: 20%;
-    left: -8%; }
-  body #background #chip-orange {
-    left: 22%; }
-  body #background #monitor-purple {
-    bottom: 16%;
-    right: 16%; }
-  body #background #gate-blue {
-    right: 4%; } }
+      font-size: 16px; } }
 @media screen and (max-width: 420px) {
   body #wrapper #presents {
     padding-top: 20vh; }
   body #wrapper .build-your-own {
     font-size: 1.5rem;
     top: 24vh; }
-    body #wrapper .build-your-own .char1 {
+    body #wrapper .build-your-own #char1 {
       transform: rotate(-16.5deg); }
-    body #wrapper .build-your-own .char2 {
+    body #wrapper .build-your-own #char2 {
       transform: rotate(-14deg); }
-    body #wrapper .build-your-own .char3 {
+    body #wrapper .build-your-own #char3 {
       transform: rotate(-11.5deg); }
-    body #wrapper .build-your-own .char4 {
+    body #wrapper .build-your-own #char4 {
       transform: rotate(-9deg); }
-    body #wrapper .build-your-own .char5 {
+    body #wrapper .build-your-own #char5 {
       transform: rotate(-6.5deg); }
-    body #wrapper .build-your-own .char6 {
+    body #wrapper .build-your-own #char6 {
       transform: rotate(-4deg); }
-    body #wrapper .build-your-own .char7 {
+    body #wrapper .build-your-own #char7 {
       transform: rotate(-1.5deg); }
-    body #wrapper .build-your-own .char8 {
+    body #wrapper .build-your-own #char8 {
       transform: rotate(1deg); }
-    body #wrapper .build-your-own .char9 {
+    body #wrapper .build-your-own #char9 {
       transform: rotate(3.5deg); }
-    body #wrapper .build-your-own .char10 {
+    body #wrapper .build-your-own #char10 {
       transform: rotate(6deg); }
-    body #wrapper .build-your-own .char11 {
+    body #wrapper .build-your-own #char11 {
       transform: rotate(8.5deg); }
-    body #wrapper .build-your-own .char12 {
+    body #wrapper .build-your-own #char12 {
       transform: rotate(11deg); }
-    body #wrapper .build-your-own .char13 {
+    body #wrapper .build-your-own #char13 {
       transform: rotate(13.5deg); }
-    body #wrapper .build-your-own .char14 {
+    body #wrapper .build-your-own #char14 {
       transform: rotate(16deg); }
-  body #wrapper #hackathon {
+  body #wrapper #hackathon-wrapper #hackathon {
     font-size: 4rem; }
   body #wrapper form input[type='email'] {
     width: 90vw; }
   body #wrapper form input[type='submit'] {
-    margin-top: 10px; }
-  body #background #cord-blue {
-    display: none; }
-  body #background #monitor-purple {
-    display: none; }
-  body #background #gate-blue {
-    display: none; } }
+    margin-top: 10px; } }
 @media screen and (max-width: 360px) {
-  body #wrapper #hackathon {
+  body #wrapper #hackathon-wrapper #hackathon {
     font-size: 3rem; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,8 +1,6 @@
-
 $num-letters: 14
 $angle-span: 75deg
 $angle-offset: -41deg
-
 
 // Angle breakpoint
 $angle-span-800: 60deg
@@ -14,12 +12,17 @@ $angle-offset-621: -24deg
 $angle-span-420: 35deg
 $angle-offset-420: -19deg
 
+$confetti-size: 90px
+
 =rotate-text($i, $angle, $offset)
 	transform: rotate($angle / $num-letters * $i + $offset)
 
-body 
+body
 	padding: 0
 	margin: 0
+	width: 100vw
+	height: 100vh
+	overflow: hidden
 
 $primary-font-stack: 'Avenir', sans-serif
 $secondary-font-stack: 'FiraCode-Regular', monospace
@@ -33,7 +36,7 @@ $red: #f16667
 $cosmic-latte: #fff8e7
 $whitesmoke: #f5f5f5
 
-.logo
+#logo
 	position: absolute
 	z-index: 100
 
@@ -44,95 +47,48 @@ $whitesmoke: #f5f5f5
 
 #background
 	position: absolute
-	left: 0
-	top: 0
+	left: -10vw
+	top: -10vh
 	z-index: 1
-	height: 100vh
-	width: 100vw
+	height: 120vh
+	width: 120vw
 	background-color: $whitesmoke
-	overflow: hidden
 
-	// .svg-wrap
-	// 	display: inline-block
-	// 	height: 15px
-	// 	width: 15px
-	// 	margin: 15px
+	#confetti-1,
+	#confetti-2,
+	#confetti-3,
+	#confetti-4
+		display: none
 
-	// svg
-	// 	float: left
-	// 	width: 15px
-	// 	height: 15px
+	.svg-wrap
+		display: inline-block
+		height: $confetti-size - 20
+		width: $confetti-size + 10
 
-	.chip
-		height: 60px
+	svg
+		float: left
+		width: $confetti-size
+		height: $confetti-size
 
-	.gate
-		height: 70px
+	.green
+		fill: $green
 
-	.cord
-		height: 50px
+	.blue
+		fill: $blue
 
-	.monitor
-		height: 60px
+	.yellow
+		fill: $yellow
 
-	.phone
-		height: 60px
+	.purple
+		fill: $purple
 
-	#chip-red
-		position: absolute
-		top: 30%
-		left: 8%
-		transform: rotate(45deg)
+	.orange
+		fill: $orange
 
-	#chip-green
-		position: absolute
-		top: 20%
-		right: 10%
-		transform: rotate(32deg)
+	.red
+		fill: $red
 
-	#chip-orange
-		position: absolute
-		bottom: 10%
-		left: 24%
-		transform: rotate(32deg)
-
-	#gate-purple
-		position: absolute
-		top: 8%
-		left: 23%
-		transform: rotate(-30deg)
-
-	#gate-blue
-		position: absolute
-		bottom: 8%
-		right: 20%
-		transform: rotate(30deg)
-
-	#cord-blue
-		position: absolute
-		bottom: 20%
-		left: 2%
-		transform: rotate(-20deg)
-
-	#cord-orange
-		position: absolute
-		top: 10%
-		right: 16%
-		transform: rotate(-140deg)
-
-	#monitor-purple
-		position: absolute
-		bottom: 7%
-		right: 35%
-		transform: rotate(20deg)
-
-	#phone-red
-		position: absolute
-		bottom: 25%
-		right: 10%
-		transform: rotate(-20deg)
-
-#wrapper 
+#wrapper
 	z-index: 100
 	width: 100vw
 	height: 100vh
@@ -142,19 +98,20 @@ $whitesmoke: #f5f5f5
 	z-index: 9
 	position: relative
 
-	#presents
+	#presents-wrapper
 		padding-top: 15vh
 		font-size: 1.5rem
 		font-weight: 400
 
-		#wild
-			color: $blue
-		#hacks
-			color: $purple
-		#year
-			color: $yellow
-		#pres
-			color: $green
+		#presents
+			#wild
+				color: $blue
+			#hacks
+				color: $purple
+			#year
+				color: $yellow
+			#pres
+				color: $green
 
 	.build-your-own
 		position: absolute
@@ -169,34 +126,36 @@ $whitesmoke: #f5f5f5
 			width: 20px
 			left: 0px
 			top: 50px
-			transform-origin: bottom center	
+			transform-origin: bottom center
 
 		@for $i from 1 through 5
-			.char#{$i}
+			#char#{$i}
 				color: $yellow
-			.char6
+			#char6
 				color: $green
 
 		@for $i from 7 through 10
-			.char#{$i}
+			#char#{$i}
 				color: $purple
-			.char11
+			#char11
 				color: $green
 
 		@for $i from 12 through 14
-			.char#{$i}
+			#char#{$i}
 				color: $blue
 
 		@for $i from 1 through $num-letters
-			.char#{$i} 
+			#char#{$i}
 				+rotate-text($i, $angle-span, $angle-offset)
 
-	#hackathon
-		color: $red
-		font-size: 9rem
-		font-weight: 900
+	#hackathon-wrapper
 		margin-bottom: 0px
 		margin-top: 20vh
+
+		#hackathon
+			color: $red
+			font-size: 9rem
+			font-weight: 900
 
 	form
 		input[type='email']
@@ -215,7 +174,7 @@ $whitesmoke: #f5f5f5
 				height: 46px
 				line-height: 40px
 				font-family: FiraCode
-				font-size: 20px	
+				font-size: 20px
 				color: $whitesmoke
 				border-radius: 4px
 				border: 2px solid $green
@@ -243,58 +202,24 @@ $whitesmoke: #f5f5f5
 	display: none
 
 
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 800px)
 	body
 		#wrapper
 			.build-your-own
 				font-size: 2.5rem
 				top: 17vh
-				
+
 				@for $i from 1 through $num-letters
-					.char#{$i} 
+					#char#{$i}
 						+rotate-text($i, $angle-span-800, $angle-offset-800)
 
-			#hackathon
+			#hackathon-wrapper
 				margin-top: 18vh
-				font-size: 7rem
+				#hackathon
+					font-size: 7rem
 			form
 				input[type='email']
 					width: 50vw
-		
-		#background
-			#chip-red
-				top: 25%
-				left: 8%
-
-			#chip-green
-				top: 10%
-				right: 10%
-
-			#chip-orange
-				bottom: 10%
-				left: 24%
-
-			#gate-purple
-				top: 3%
-				left: 40%
-
-			#gate-blue
-				bottom: 8%
-				right: 10%
-
-			#cord-blue
-				bottom: 8%
-				left: 0%
-
-			#cord-orange
-				display: none
-
-			#monitor-purple
-				bottom: 7%
-				right: 25%
-
-			#phone-red
-				display: none
 
 @media screen and (max-width: 621px)
 	body
@@ -306,12 +231,13 @@ $whitesmoke: #f5f5f5
 				font-size: 2rem
 
 				@for $i from 1 through $num-letters
-					.char#{$i} 
+					#char#{$i}
 						+rotate-text($i, $angle-span-621, $angle-offset-621)
 
-			#hackathon
+			#hackathon-wrapper
 				margin-top: 15vh
-				font-size: 5rem
+				#hackathon
+					font-size: 5rem
 			form
 				margin-top: 10px
 
@@ -319,33 +245,6 @@ $whitesmoke: #f5f5f5
 					font-size: 16px
 				input[type='submit']
 					font-size: 16px
-
-		#background
-
-			#chip-red
-				display: none
-
-			#chip-green
-				display: none
-
-			#gate-purple
-				display: none
-
-			#cord-blue
-				bottom: 20%
-				left: -8%
-
-			#chip-orange
-				left: 22%
-
-			#monitor-purple
-				bottom: 16%
-				right: 16%
-
-			#gate-blue
-				right: 4%
-
-
 
 @media screen and (max-width: 420px)
 	body
@@ -356,11 +255,12 @@ $whitesmoke: #f5f5f5
 				font-size: 1.5rem
 				top: 24vh
 				@for $i from 1 through $num-letters
-					.char#{$i} 
+					#char#{$i}
 						+rotate-text($i, $angle-span-420, $angle-offset-420)
 
-			#hackathon
-				font-size: 4rem
+			#hackathon-wrapper
+				#hackathon
+					font-size: 4rem
 
 			form
 				input[type='email']
@@ -368,20 +268,10 @@ $whitesmoke: #f5f5f5
 				input[type='submit']
 					margin-top: 10px
 
-		#background
 
-			#cord-blue
-				display: none
-
-			#monitor-purple
-				display: none
-
-			#gate-blue
-				display: none
-
-
-@media screen and (max-width: 360px) 
-	body 
+@media screen and (max-width: 360px)
+	body
 		#wrapper
-			#hackathon
-				font-size: 3rem
+			#hackathon-wrapper
+				#hackathon
+					font-size: 3rem

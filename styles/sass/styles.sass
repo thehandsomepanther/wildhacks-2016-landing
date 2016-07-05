@@ -4,7 +4,7 @@ $angle-offset: -41deg
 
 // Angle breakpoint
 $angle-span-800: 60deg
-$angle-offset-800: -30deg
+$angle-offset-800: -32deg
 
 $angle-span-621: 45deg
 $angle-offset-621: -24deg
@@ -13,7 +13,7 @@ $angle-span-420: 35deg
 $angle-offset-420: -19deg
 
 $confetti-size: 90px
-$confetti-size-800: 80px
+$confetti-size-800: 65px
 $confetti-size-621: 60px
 $confetti-size-420: 40px
 
@@ -50,11 +50,11 @@ $whitesmoke: #f5f5f5
 
 #background
 	position: absolute
-	left: -10vw
-	top: -10vh
+	left: -5vw
+	top: -5vh
 	z-index: 1
-	height: 120vh
-	width: 120vw
+	height: 110vh
+	width: 110vw
 	background-color: $whitesmoke
 
 	#confetti-1,
@@ -65,7 +65,7 @@ $whitesmoke: #f5f5f5
 
 	.svg-wrap
 		display: inline-block
-		height: $confetti-size - 20
+		height: $confetti-size - 10
 		width: $confetti-size + 10
 
 	svg
@@ -118,7 +118,6 @@ $whitesmoke: #f5f5f5
 
 	#dummy
 		position: relative
-		// background-color: red
 		height: 100px
 		width: 40vw
 		margin: 0 auto
@@ -160,7 +159,7 @@ $whitesmoke: #f5f5f5
 
 	#hackathon-wrapper
 		margin-bottom: 0px
-		// margin-top: 20vh
+		margin-top: 0px
 
 		#hackathon
 			color: $red
@@ -195,20 +194,13 @@ $whitesmoke: #f5f5f5
 			input[type='submit']:hover
 				cursor: pointer
 
-		#form-dummy
-			height: 20px
-			width: 50vw
-			position: relative
-			text-align: center
-			margin: 0 auto
-
 
 @media screen and (max-width: 800px)
 	body
 		#background
 			.svg-wrap
 				display: inline-block
-				height: $confetti-size-800 - 20
+				height: $confetti-size-800 - 10
 				width: $confetti-size-800 + 10
 
 			svg
@@ -217,9 +209,25 @@ $whitesmoke: #f5f5f5
 				height: $confetti-size-800
 
 		#wrapper
+			#presents-wrapper
+				padding-top: 20vh
+				margin-top: 5vh
+
+				#dummy
+					width: 45vw
+
 			.build-your-own
 				font-size: 2.5rem
 				top: 17vh
+
+				span
+					height: 400px
+					position: absolute
+					width: 20px
+					left: 0px
+					top: 100px
+
+				#dummy
 
 				@for $i from 1 through $num-letters
 					#char#{$i}
@@ -238,18 +246,21 @@ $whitesmoke: #f5f5f5
 		#background
 			.svg-wrap
 				display: inline-block
-				height: $confetti-size-621 - 20
-				width: $confetti-size-621 + 10
+				height: $confetti-size-621
+				width: $confetti-size-621 - 5
 
 			svg
-				float: left
 				width: $confetti-size-621
 				height: $confetti-size-621
 
 		.logo
 			img
 				width: 70px
+
 		#wrapper
+			#dummy
+				height: 70px
+
 			.build-your-own
 				font-size: 2rem
 
@@ -260,7 +271,8 @@ $whitesmoke: #f5f5f5
 			#hackathon-wrapper
 				// margin-top: 15vh
 				#hackathon
-					font-size: 5rem
+					font-size: 4rem
+
 			form
 				margin-top: 10px
 
@@ -283,11 +295,13 @@ $whitesmoke: #f5f5f5
 				height: $confetti-size-420
 
 		#wrapper
+			#dummy
+				height: 30px
 			#presents-wrapper
 				padding-top: 20vh
 			.build-your-own
 				font-size: 1.5rem
-				top: 24vh
+				top: 15vh
 				@for $i from 1 through $num-letters
 					#char#{$i}
 						+rotate-text($i, $angle-span-420, $angle-offset-420)

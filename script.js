@@ -1,22 +1,12 @@
 function or(a, b) {
   return a || b;
-}
+};
 
-var background = document.getElementById("background");
-var background_clone = background.cloneNode(true);
-
-var confetti_1 = document.getElementById("confetti-1");
-var confetti_1_clone = confetti_1.cloneNode(true);
-
-var confetti_2 = document.getElementById("confetti-2");
-var confetti_2_clone = confetti_2.cloneNode(true);
-
-var confetti_3 = document.getElementById("confetti-3");
-var confetti_3_clone = confetti_3.cloneNode(true);
-
-var confetti_4 = document.getElementById("confetti-4");
-var confetti_4_clone = confetti_4.cloneNode(true);
-
+var background_clone = document.getElementById("background").cloneNode(true);
+var confetti_1_clone = document.getElementById("confetti-1").cloneNode(true);
+var confetti_2_clone = document.getElementById("confetti-2").cloneNode(true);
+var confetti_3_clone = document.getElementById("confetti-3").cloneNode(true);
+var confetti_4_clone = document.getElementById("confetti-4").cloneNode(true);
 var confettis = [confetti_1_clone, confetti_2_clone, confetti_3_clone, confetti_4_clone];
 var colors = ["green", "blue", "yellow", "purple", "orange", "red"];
 
@@ -25,22 +15,34 @@ var h = window.innerHeight;
 var window_center = {
   x: Math.floor(w/2),
   y: Math.floor(h/2)
-}
+};
 
-var radians_to_degrees = 180/Math.PI;
+var RAD_TO_DEG = 180/Math.PI;
 
 var angle_noise = 25;
 var position_noise_x = 20;
 var position_noise_y = 20;
 
+var pad = .04 * h;
+
 var screen_elements = [
-  document.getElementById("presents").getBoundingClientRect(),
-  document.getElementById("dummy").getBoundingClientRect(),
-  document.getElementById("hackathon").getBoundingClientRect(),
-  document.getElementById("mce-EMAIL").getBoundingClientRect(),
-  document.getElementById("mc-embedded-subscribe").getBoundingClientRect(),
-  document.getElementById("form-dummy").getBoundingClientRect()
-]
+  getCollisionArea(document.getElementById("presents").getBoundingClientRect(), pad),
+  getCollisionArea(document.getElementById("dummy").getBoundingClientRect(), pad),
+  getCollisionArea(document.getElementById("hackathon").getBoundingClientRect(), pad),
+  getCollisionArea(document.getElementById("mce-EMAIL").getBoundingClientRect(), pad),
+  getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), pad),
+];
+
+function getCollisionArea(box, pad) {
+  var collision_area = {};
+
+  collision_area.top = box.top - pad;
+  collision_area.left = box.left - pad;
+  collision_area.height = box.height + (pad * 2);
+  collision_area.width = box.width + (pad * 2);
+
+  return collision_area;
+};
 
 function createBackground() {
   // insert here a way to clear the entire background
@@ -85,16 +87,12 @@ function createBackground() {
 
       var position_adjustment = Math.floor(Math.random() * 100) % position_noise_x - position_noise_x;
 
-      if (rect.top % (rect.height * 2)) {
-        // rect.left -= 1.5 * rect.width;
-      }
-
       new_confetti.style.marginLeft = -position_adjustment + "px";
       position_adjustment = Math.floor(Math.random() * 100) % position_noise_y - position_noise_y;
       new_confetti.style.marginTop = position_adjustment + "px";
 
       var angle_adjustment = 0;
-      var angle = Math.atan2(vector.y, vector.x) * radians_to_degrees + 270 + angle_adjustment;
+      var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270 + angle_adjustment;
 
       // var angle_adjustment = Math.floor(Math.random() * 100) % angle_noise - angle_noise;
       new_confetti.style.transform = "rotate(" + angle + "deg)";
@@ -102,7 +100,7 @@ function createBackground() {
 
     new_confetti.removeAttribute("id")
   }
-}
+};
 
 createBackground();
 

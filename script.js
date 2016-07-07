@@ -2,12 +2,19 @@ function or(a, b) {
   return a || b;
 };
 
-var background_clone = document.getElementById("background").cloneNode(true);
+function removeChildren(node) {
+  while (node.firstChild) {
+    node.removeChild(node.firstChild);
+  }
+}
+
+var background = document.getElementById("background");
+var background_clone = background.cloneNode(true);
 var confetti_1_clone = document.getElementById("confetti-1").cloneNode(true);
 var confetti_2_clone = document.getElementById("confetti-2").cloneNode(true);
 var confetti_3_clone = document.getElementById("confetti-3").cloneNode(true);
 var confetti_4_clone = document.getElementById("confetti-4").cloneNode(true);
-var confettis = [confetti_1_clone, confetti_2_clone, confetti_3_clone, confetti_4_clone];
+var confetti_clones = [confetti_1_clone, confetti_2_clone, confetti_3_clone, confetti_4_clone];
 var colors = ["green", "blue", "yellow", "purple", "orange", "red"];
 
 var w = window.innerWidth;
@@ -23,7 +30,7 @@ var angle_noise = 25;
 var position_noise_x = 20;
 var position_noise_y = 20;
 
-var pad = .04 * h;
+var pad = .05 * h;
 
 var screen_elements = [
   getCollisionArea(document.getElementById("presents").getBoundingClientRect(), pad),
@@ -44,13 +51,22 @@ function getCollisionArea(box, pad) {
   return collision_area;
 };
 
+function clearBackground() {
+  removeChildren(background)
+}
+
+function resetBackground() {
+  clearBackground();
+  createBackground();
+}
+
 function createBackground() {
   // insert here a way to clear the entire background
 
   for (var i = 0; i < 500; i++){
-    var rand_confetti = Math.floor(Math.random() * 10) % confettis.length;
+    var rand_confetti = Math.floor(Math.random() * 10) % confetti_clones.length;
 
-    var new_confetti = confettis[rand_confetti].cloneNode(true);
+    var new_confetti = confetti_clones[rand_confetti].cloneNode(true);
     new_confetti.id = "new-confetti";
 
     var rand_color = Math.floor(Math.random() * 10) % colors.length;
@@ -102,6 +118,31 @@ function createBackground() {
   }
 };
 
+var confettis = document.getElementsByClassName("svg-wrap");
+var up = "first";
+var theta = 10;
+
+function wiggle() {
+  for (i = 0; i < confettis.length; i++) {
+    var angle = parseFloat(confettis[i].style.transform.replace("rotate(", "").replace("deg)", ""));
+    angle += (up ? theta : -theta)
+    confettis[i].style.transform = "rotate(" + angle + "deg)";
+  }
+  if (typeof up == "string") theta *= 2;
+  up = !up;
+}
+
+function randomWiggle() {
+  for (i = 0; i < confettis.length; i++) {
+    var angle = parseFloat(confettis[i].style.transform.replace("rotate(", "").replace("deg)", ""));
+    angle += (Math.ceil(Math.random() - .5) ? theta : -theta)
+    confettis[i].style.transform = "rotate(" + angle + "deg)";
+  }
+}
+
+window.addEventListener("resize", resetBackground);
 createBackground();
 
-// window.addEventListener("resize", createBackground);
+// setInterval(resetBackground, 500)
+// setInterval(wiggle, 500)
+setInterval(randomWiggle, 500)

@@ -57,6 +57,22 @@ function clearBackground() {
 
 function resetBackground() {
   clearBackground();
+
+  w = window.innerWidth;
+  h = window.innerHeight;
+  window_center = {
+    x: Math.floor(w/2),
+    y: Math.floor(h/2)
+  };
+
+  screen_elements = [
+    getCollisionArea(document.getElementById("presents").getBoundingClientRect(), pad),
+    getCollisionArea(document.getElementById("dummy").getBoundingClientRect(), pad),
+    getCollisionArea(document.getElementById("hackathon").getBoundingClientRect(), pad),
+    getCollisionArea(document.getElementById("mce-EMAIL").getBoundingClientRect(), pad),
+    getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), pad),
+  ];
+
   createBackground();
 }
 

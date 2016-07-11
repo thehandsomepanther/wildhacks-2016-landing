@@ -9,6 +9,7 @@ function removeChildren(node) {
 }
 
 var background = document.getElementById("background");
+var background_rect = background.getBoundingClientRect();
 var background_clone = background.cloneNode(true);
 var confetti_1_clone = document.getElementById("confetti-1").cloneNode(true);
 var confetti_2_clone = document.getElementById("confetti-2").cloneNode(true);
@@ -24,6 +25,12 @@ var window_center = {
   y: Math.floor(h/2)
 };
 
+var confetti_rect = getConfettiSize();
+
+var cols = Math.ceil(background_rect.width / confetti_rect.width);
+
+background.style.width = cols * confetti_rect.width;
+
 var RAD_TO_DEG = 180/Math.PI;
 
 var angle_noise = 25;
@@ -37,7 +44,7 @@ var screen_elements = [
   getCollisionArea(document.getElementById("dummy").getBoundingClientRect(), pad),
   getCollisionArea(document.getElementById("hackathon").getBoundingClientRect(), pad),
   getCollisionArea(document.getElementById("mce-EMAIL").getBoundingClientRect(), pad),
-  getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), pad),
+  getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), pad)
 ];
 
 function getCollisionArea(box, pad) {
@@ -49,7 +56,16 @@ function getCollisionArea(box, pad) {
   collision_area.width = box.width + (pad * 2);
 
   return collision_area;
-};
+}
+
+function getConfettiSize() {
+  var dummy = confetti_clones[0].cloneNode(true);
+  dummy.id = "";
+  background.appendChild(dummy);
+  var dummy_rect = dummy.getBoundingClientRect();
+  background.removeChild(dummy);
+  return dummy_rect;
+}
 
 function clearBackground() {
   removeChildren(background)
@@ -57,6 +73,8 @@ function clearBackground() {
 
 function resetBackground() {
   clearBackground();
+
+  confetti_rect = getConfettiSize();
 
   w = window.innerWidth;
   h = window.innerHeight;
@@ -73,6 +91,10 @@ function resetBackground() {
     getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), pad),
   ];
 
+  confetti_rect = getConfettiSize();
+  cols = Math.ceil(background_rect.width / confetti_rect.width);
+  background.style.width = cols * confetti_rect.width;
+
   createBackground();
 }
 
@@ -88,7 +110,7 @@ function createBackground() {
     var rand_color = Math.floor(Math.random() * 10) % colors.length;
     new_confetti.className += " " + colors[rand_color];
 
-    document.getElementById("background").appendChild(new_confetti);
+    background.appendChild(new_confetti);
 
     var rect = new_confetti.getBoundingClientRect();
 
@@ -119,7 +141,7 @@ function createBackground() {
 
       var position_adjustment = Math.floor(Math.random() * 100) % position_noise_x - position_noise_x;
 
-      new_confetti.style.marginLeft = -position_adjustment + "px";
+      new_confetti.style.marginLeft = 0 + "px";
       position_adjustment = Math.floor(Math.random() * 100) % position_noise_y - position_noise_y;
       new_confetti.style.marginTop = position_adjustment + "px";
 

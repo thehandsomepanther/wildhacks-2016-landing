@@ -255,7 +255,7 @@ body {
   body .logo img {
     width: 70px; }
   body #wrapper #dummy {
-    height: 70px; }
+    height: 100px; }
   body #wrapper .build-your-own {
     font-size: 2rem; }
     body #wrapper .build-your-own #char1 {
@@ -304,7 +304,7 @@ body {
     width: 80px;
     height: 80px; }
   body #wrapper #dummy {
-    height: 30px; }
+    height: 70px; }
   body #wrapper #presents-wrapper {
     padding-top: 20vh; }
   body #wrapper .build-your-own {

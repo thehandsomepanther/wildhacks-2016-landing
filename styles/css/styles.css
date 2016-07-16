@@ -341,6 +341,10 @@ body {
     margin-top: 10px;
     margin-bottom: 20px; } }
 @media screen and (max-width: 360px) {
+  body #wrapper #dummy {
+    height: 40px; }
+  body #wrapper .build-your-own {
+    top: 6vh; }
   body #wrapper #hackathon-wrapper #hackathon {
     font-size: 3rem; } }
 

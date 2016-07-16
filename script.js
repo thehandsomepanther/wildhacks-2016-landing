@@ -199,7 +199,11 @@ switch(Math.floor((Math.random() * 10) % 5)) {
 
       resetBackground(mouse_pos);
     });
-    break;
+
+    // setInterval(function() {
+    //   resetBackground(mouse_pos);
+    // }, 100);
+    // break;
 
   case 3:
     window.addEventListener("keydown", function(e) {
@@ -210,7 +214,7 @@ switch(Math.floor((Math.random() * 10) % 5)) {
   case 2:
     setInterval(function() {
       resetBackground(window_center);
-    }, 500)
+    }, 500);
     break;
 
   case 1:

@@ -28,8 +28,10 @@ var window_center = {
 var confetti_rect = getConfettiSize();
 
 var cols = Math.ceil(background_rect.width / confetti_rect.width);
-
+var rows = Math.ceil(background_rect.height / confetti_rect.height);
 background.style.width = cols * confetti_rect.width;
+
+var TOTAL_CONFETTI = cols * rows;
 
 var RAD_TO_DEG = 180/Math.PI;
 
@@ -71,7 +73,7 @@ function clearBackground() {
   removeChildren(background)
 }
 
-function resetBackground() {
+function resetBackground(center) {
   clearBackground();
 
   confetti_rect = getConfettiSize();
@@ -93,15 +95,18 @@ function resetBackground() {
 
   confetti_rect = getConfettiSize();
   cols = Math.ceil(background_rect.width / confetti_rect.width);
+  rows = Math.ceil(background_rect.height / confetti_rect.height);
   background.style.width = cols * confetti_rect.width;
 
-  createBackground();
+  TOTAL_CONFETTI = cols * rows;
+
+  createBackground(center);
 }
 
-function createBackground() {
+function createBackground(center) {
   // insert here a way to clear the entire background
 
-  for (var i = 0; i < 500; i++){
+  for (var i = 0; i < TOTAL_CONFETTI; i++){
     var rand_confetti = Math.floor(Math.random() * 10) % confetti_clones.length;
 
     var new_confetti = confetti_clones[rand_confetti].cloneNode(true);
@@ -135,8 +140,8 @@ function createBackground() {
       }
 
       var vector = {
-        x: window_center.x - rect_center.x,
-        y: window_center.y - rect_center.y
+        x: center.x - rect_center.x,
+        y: center.y - rect_center.y
       }
 
       var position_adjustment = Math.floor(Math.random() * 100) % position_noise_x - position_noise_x;
@@ -178,9 +183,41 @@ function randomWiggle() {
   }
 }
 
-window.addEventListener("resize", resetBackground);
-createBackground();
+window.addEventListener("resize", function() {
+  resetBackground(window_center)
+});
 
-// setInterval(resetBackground, 500)
-// setInterval(wiggle, 500)
-setInterval(randomWiggle, 500)
+var mouse_pos = window_center;
+
+createBackground(window_center);
+
+switch(Math.floor((Math.random() * 10) % 5)) {
+  case 4:
+    window.addEventListener("mousemove", function(e) {
+      mouse_pos.x = e.clientX;
+      mouse_pos.y = e.clientY;
+
+      resetBackground(mouse_pos);
+    });
+    break;
+
+  case 3:
+    window.addEventListener("keydown", function(e) {
+      resetBackground(window_center);
+    });
+    break;
+
+  case 2:
+    setInterval(function() {
+      resetBackground(window_center);
+    }, 500)
+    break;
+
+  case 1:
+    setInterval(wiggle, 500)
+    break;
+
+  default:
+    setInterval(randomWiggle, 500)
+}
+

@@ -188,22 +188,26 @@ window.addEventListener("resize", function() {
 });
 
 var mouse_pos = window_center;
+var new_mouse_pos = mouse_pos;
 
 createBackground(window_center);
 
 switch(Math.floor((Math.random() * 10) % 5)) {
   case 4:
     window.addEventListener("mousemove", function(e) {
-      mouse_pos.x = e.clientX;
-      mouse_pos.y = e.clientY;
-
-      resetBackground(mouse_pos);
+      new_mouse_pos = {
+        x: e.clientX,
+        y: e.clientY        
+      }
     });
 
-    // setInterval(function() {
-    //   resetBackground(mouse_pos);
-    // }, 100);
-    // break;
+    setInterval(function() {
+      if (new_mouse_pos != mouse_pos) {
+        mouse_pos = new_mouse_pos
+        resetBackground(mouse_pos);
+      } 
+    }, 100);
+    break;
 
   case 3:
     window.addEventListener("keydown", function(e) {

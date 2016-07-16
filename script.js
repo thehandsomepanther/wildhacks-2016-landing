@@ -100,10 +100,10 @@ function resetBackground(center) {
 
   TOTAL_CONFETTI = cols * rows;
 
-  createBackground(center);
+  createBackground();
 }
 
-function createBackground(center) {
+function createBackground() {
   // insert here a way to clear the entire background
 
   for (var i = 0; i < TOTAL_CONFETTI; i++){
@@ -140,8 +140,8 @@ function createBackground(center) {
       }
 
       var vector = {
-        x: center.x - rect_center.x,
-        y: center.y - rect_center.y
+        x: window_center.x - rect_center.x,
+        y: window_center.y - rect_center.y
       }
 
       var position_adjustment = Math.floor(Math.random() * 100) % position_noise_x - position_noise_x;
@@ -183,8 +183,24 @@ function randomWiggle() {
   }
 }
 
+function track(center) {
+  for (i = 0; i < confettis.length; i++) {
+    var this_confetti = confettis[i];
+
+    var this_confetti_rect = this_confetti.getBoundingClientRect();
+
+    var vector = {
+      x: center.x - (this_confetti_rect.left + this_confetti_rect.width / 2),
+      y: center.y - (this_confetti_rect.top + this_confetti_rect.height / 2)
+    }
+
+    var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270;
+    confettis[i].style.transform = "rotate(" + angle + "deg)";
+  }
+}
+
 window.addEventListener("resize", function() {
-  resetBackground(window_center)
+  resetBackground()
 });
 
 var mouse_pos = window_center;
@@ -199,25 +215,20 @@ switch(Math.floor((Math.random() * 10) % 5)) {
         x: e.clientX,
         y: e.clientY        
       }
-    });
 
-    setInterval(function() {
-      if (new_mouse_pos != mouse_pos) {
-        mouse_pos = new_mouse_pos
-        resetBackground(mouse_pos);
-      } 
-    }, 100);
+      track(new_mouse_pos);
+    });
     break;
 
   case 3:
     window.addEventListener("keydown", function(e) {
-      resetBackground(window_center);
+      resetBackground();
     });
     break;
 
   case 2:
     setInterval(function() {
-      resetBackground(window_center);
+      resetBackground();
     }, 500);
     break;
 

@@ -35,6 +35,9 @@ $orange: #f79868
 $red: #f16667
 $cosmic-latte: #fff8e7
 $whitesmoke: #f5f5f5
+$hover-green: #46b9ad
+
+$transition: all .1s linear
 
 #logo
 	position: absolute
@@ -171,8 +174,15 @@ $whitesmoke: #f5f5f5
 			border-radius: 4px
 			border: 2px solid $green
 			color: $green
+			transition: $transition
+
+			&:hover
+				border: 2px solid $hover-green
+				color: $hover-green				
+
 		.clear
 			display: inline-block
+
 			input[type='submit']
 				height: 46px
 				line-height: 40px
@@ -184,9 +194,12 @@ $whitesmoke: #f5f5f5
 				background-color: $green
 				padding-left: 20px
 				padding-right: 20px
+				transition: $transition
 
-			input[type='submit']:hover
-				cursor: pointer
+				&:hover
+					cursor: pointer
+					border: 2px solid $hover-green
+					background-color: $hover-green
 
 
 @media screen and (max-width: 800px)

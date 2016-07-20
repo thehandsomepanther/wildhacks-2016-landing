@@ -43,7 +43,7 @@ function setup() {
     y: Math.floor(H/2)
   };
 
-  PAD = .05 * H;
+  PAD = .055 * H;
 
   screen_elements = [
     getCollisionArea(document.getElementById("presents").getBoundingClientRect(), PAD),
@@ -130,7 +130,7 @@ function createBackground() {
       new_confetti.style.marginTop = position_adjustment + "px";
 
       var angle_adjustment = 0;
-      var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270 + angle_adjustment;
+      var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270;
 
       var angle_adjustment = Math.floor(Math.random() * 100) % ANGLE_NOISE - ANGLE_NOISE;
       angle += angle_adjustment
@@ -186,36 +186,39 @@ window.addEventListener("resize", function() {
 var mouse_pos = window_center;
 var new_mouse_pos = mouse_pos;
 
-switch(randIntLessThan(5)) {
+switch(randIntLessThan(6)) {
+  // case 5:
+  //   setInterval(randomWiggle, 500);
+  //   break;
 
-  case 4:
-    window.addEventListener("mousemove", function(e) {
-      new_mouse_pos = {
-        x: e.clientX,
-        y: e.clientY        
-      }
+  // case 4:
+  //   window.addEventListener("mousemove", function(e) {
+  //     new_mouse_pos = {
+  //       x: e.clientX,
+  //       y: e.clientY        
+  //     }
 
-      track(new_mouse_pos);
-    });
-    break;
+  //     track(new_mouse_pos);
+  //   });
+  //   break;
 
-  case 3:
-    window.addEventListener("keydown", function(e) {
-      resetBackground();
-    });
-    break;
+  // case 3:
+  //   window.addEventListener("keydown", function(e) {
+  //     resetBackground();
+  //   });
+  //   break;
 
-  case 2:
-    setInterval(function() {
-      resetBackground();
-    }, 500);
-    break;
+  // case 2:
+  //   setInterval(function() {
+  //     resetBackground();
+  //   }, 500);
+  //   break;
 
-  case 1:
-    setInterval(wiggle, 500);
-    break;
+  // case 1:
+  //   setInterval(wiggle, 500);
+  //   break;
 
   default:
-    setInterval(randomWiggle, 500);
+    
 }
 

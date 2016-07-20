@@ -25,7 +25,8 @@ body
 	margin: 0
 
 $primary-font-stack: 'Avenir', sans-serif
-$secondary-font-stack: 'FiraCode-Regular', monospace
+// $secondary-font-stack: 'FiraCode-Regular', monospace
+$secondary-font-stack: 'SpaceMono-Regular', monospace
 
 $green: #70c9c0
 $blue: #9fc9eb
@@ -49,14 +50,14 @@ $transition: all .1s linear
 		padding-top: 40px
 
 #background
-	position: absolute
-	left: -5vw
-	top: -5vh
-	z-index: 1
-	height: 105vh
-	width: 130vw
-	overflow-y: hidden
 	background-color: $whitesmoke
+	height: 105vh
+	left: -5vw
+	overflow-y: hidden
+	position: absolute
+	top: -5vh
+	width: 130vw
+	z-index: 1
 
 	#confetti-1,
 	#confetti-2,
@@ -71,8 +72,8 @@ $transition: all .1s linear
 
 	svg
 		float: left
-		width: $confetti-size
 		height: $confetti-size
+		width: $confetti-size
 
 	.green
 		fill: $green
@@ -93,15 +94,15 @@ $transition: all .1s linear
 		fill: $red
 
 #wrapper
-	z-index: 100
-	text-align: center
-	font-family: $primary-font-stack
+	font-family: $secondary-font-stack
 	position: relative
+	text-align: center
+	z-index: 100
 
 	#presents-wrapper
-		padding-top: 15vh
 		font-size: 1.5rem
 		font-weight: 400
+		padding-top: 15vh
 
 		#presents
 			#wild
@@ -114,25 +115,27 @@ $transition: all .1s linear
 				color: $green
 
 	#dummy
-		position: relative
 		height: 100px
-		width: 40vw
 		margin: 0 auto
+		position: relative
+		width: 40vw
 
 	.build-your-own
-		position: absolute
-		left: 49%
-		top: 15vh
-		font-size: 3rem
 		font-family: $secondary-font-stack
+		font-size: 3rem
+		font-style: italic
+		font-weight: 700
+		left: 49%
+		position: absolute
+		top: 15vh
 
 		span
 			height: 400px
-			position: absolute
-			width: 20px
 			left: 0px
+			position: absolute
 			top: 50px
 			transform-origin: bottom center
+			width: 20px
 
 		@for $i from 1 through 5
 			#char#{$i}
@@ -160,21 +163,23 @@ $transition: all .1s linear
 
 		#hackathon
 			color: $red
+			font-family: $primary-font-stack
 			font-size: 9rem
+			font-style: normal
 			font-weight: 900
 
 	form
 		input[type='email']
-			height: 40px
-			width: 30vw
-			font-family: FiraCode
-			font-size: 20px
-			line-height: 40px
-			padding-left: 10px
 			border-radius: 4px
 			border: 2px solid $green
 			color: $green
+			font-family: $secondary-font-stack
+			font-size: 20px
+			height: 40px
+			line-height: 40px
+			padding-left: 10px
 			transition: $transition
+			width: 30vw
 
 			&:hover
 				border: 2px solid $hover-green
@@ -184,22 +189,22 @@ $transition: all .1s linear
 			display: inline-block
 
 			input[type='submit']
-				height: 46px
-				line-height: 40px
-				font-family: FiraCode
-				font-size: 20px
-				color: $whitesmoke
+				background-color: $green
 				border-radius: 4px
 				border: 2px solid $green
-				background-color: $green
+				color: $whitesmoke
+				font-family: $secondary-font-stack
+				font-size: 20px
+				height: 46px
+				line-height: 40px
 				padding-left: 20px
 				padding-right: 20px
 				transition: $transition
 
 				&:hover
-					cursor: pointer
-					border: 2px solid $hover-green
 					background-color: $hover-green
+					border: 2px solid $hover-green
+					cursor: pointer
 
 
 @media screen and (max-width: 800px)
@@ -212,13 +217,13 @@ $transition: all .1s linear
 
 			svg
 				float: left
-				width: $confetti-size-800
 				height: $confetti-size-800
+				width: $confetti-size-800
 
 		#wrapper
 			#presents-wrapper
-				padding-top: 20vh
 				margin-top: 5vh
+				padding-top: 20vh
 
 				#dummy
 					width: 45vw
@@ -229,19 +234,19 @@ $transition: all .1s linear
 
 				span
 					height: 400px
-					position: absolute
-					width: 20px
 					left: 0px
+					position: absolute
 					top: 100px
+					width: 20px
 
 				@for $i from 1 through $num-letters
 					#char#{$i}
 						+rotate-text($i, $angle-span-800, $angle-offset-800)
 
 			#hackathon-wrapper
-				// margin-top: 18vh
 				#hackathon
 					font-size: 7rem
+
 			form
 				input[type='email']
 					width: 50vw
@@ -255,8 +260,8 @@ $transition: all .1s linear
 				width: $confetti-size-621 - 5
 
 			svg
-				width: $confetti-size-621
 				height: $confetti-size-621
+				width: $confetti-size-621
 
 		.logo
 			img
@@ -274,7 +279,6 @@ $transition: all .1s linear
 						+rotate-text($i, $angle-span-621, $angle-offset-621)
 
 			#hackathon-wrapper
-				// margin-top: 15vh
 				#hackathon
 					font-size: 4rem
 
@@ -283,6 +287,7 @@ $transition: all .1s linear
 
 				input[type='email']
 					font-size: 16px
+
 				input[type='submit']
 					font-size: 16px
 
@@ -296,14 +301,16 @@ $transition: all .1s linear
 
 			svg
 				float: left
-				width: $confetti-size-420
 				height: $confetti-size-420
+				width: $confetti-size-420
 
 		#wrapper
 			#dummy
 				height: 70px
+
 			#presents-wrapper
 				padding-top: 20vh
+
 			.build-your-own
 				font-size: 1.5rem
 				top: 15vh
@@ -318,11 +325,12 @@ $transition: all .1s linear
 			#mc_embed_signup
 				form
 					#mce-EMAIL
+						margin-bottom: 20px
 						width: 90vw
-						margin-bottom: 20px
+
 					#mc-embedded-subscribe
-						margin-top: 10px
 						margin-bottom: 20px
+						margin-top: 10px
 
 
 @media screen and (max-width: 360px)
@@ -330,8 +338,10 @@ $transition: all .1s linear
 		#wrapper
 			#dummy
 				height: 40px
+
 			.build-your-own
 				top: 6vh
+
 			#hackathon-wrapper
 				#hackathon
 					font-size: 3rem

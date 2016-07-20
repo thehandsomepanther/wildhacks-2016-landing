@@ -11,14 +11,14 @@ body {
     padding-top: 40px; }
 
 #background {
-  position: absolute;
-  left: -5vw;
-  top: -5vh;
-  z-index: 1;
+  background-color: #f5f5f5;
   height: 105vh;
-  width: 130vw;
+  left: -5vw;
   overflow-y: hidden;
-  background-color: #f5f5f5; }
+  position: absolute;
+  top: -5vh;
+  width: 130vw;
+  z-index: 1; }
   #background #confetti-1,
   #background #confetti-2,
   #background #confetti-3,
@@ -30,8 +30,8 @@ body {
     width: 100px; }
   #background svg {
     float: left;
-    width: 90px;
-    height: 90px; }
+    height: 90px;
+    width: 90px; }
   #background .green {
     fill: #70c9c0; }
   #background .blue {
@@ -46,14 +46,14 @@ body {
     fill: #f16667; }
 
 #wrapper {
-  z-index: 100;
+  font-family: "SpaceMono-Regular", monospace;
+  position: relative;
   text-align: center;
-  font-family: "Avenir", sans-serif;
-  position: relative; }
+  z-index: 100; }
   #wrapper #presents-wrapper {
-    padding-top: 15vh;
     font-size: 1.5rem;
-    font-weight: 400; }
+    font-weight: 400;
+    padding-top: 15vh; }
     #wrapper #presents-wrapper #presents #wild {
       color: #9fc9eb; }
     #wrapper #presents-wrapper #presents #hacks {
@@ -63,23 +63,25 @@ body {
     #wrapper #presents-wrapper #presents #pres {
       color: #70c9c0; }
   #wrapper #dummy {
-    position: relative;
     height: 100px;
-    width: 40vw;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative;
+    width: 40vw; }
   #wrapper .build-your-own {
-    position: absolute;
-    left: 49%;
-    top: 15vh;
+    font-family: "SpaceMono-Regular", monospace;
     font-size: 3rem;
-    font-family: "FiraCode-Regular", monospace; }
+    font-style: italic;
+    font-weight: 700;
+    left: 49%;
+    position: absolute;
+    top: 15vh; }
     #wrapper .build-your-own span {
       height: 400px;
-      position: absolute;
-      width: 20px;
       left: 0px;
+      position: absolute;
       top: 50px;
-      transform-origin: bottom center; }
+      transform-origin: bottom center;
+      width: 20px; }
     #wrapper .build-your-own #char1 {
       color: #ffd05b; }
     #wrapper .build-your-own #char6 {
@@ -155,40 +157,42 @@ body {
     margin-top: 0px; }
     #wrapper #hackathon-wrapper #hackathon {
       color: #f16667;
+      font-family: "Avenir", sans-serif;
       font-size: 9rem;
+      font-style: normal;
       font-weight: 900; }
   #wrapper form input[type='email'] {
-    height: 40px;
-    width: 30vw;
-    font-family: FiraCode;
-    font-size: 20px;
-    line-height: 40px;
-    padding-left: 10px;
     border-radius: 4px;
     border: 2px solid #70c9c0;
     color: #70c9c0;
-    transition: all 0.1s linear; }
+    font-family: "SpaceMono-Regular", monospace;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    transition: all 0.1s linear;
+    width: 30vw; }
     #wrapper form input[type='email']:hover {
       border: 2px solid #46b9ad;
       color: #46b9ad; }
   #wrapper form .clear {
     display: inline-block; }
     #wrapper form .clear input[type='submit'] {
-      height: 46px;
-      line-height: 40px;
-      font-family: FiraCode;
-      font-size: 20px;
-      color: #f5f5f5;
+      background-color: #70c9c0;
       border-radius: 4px;
       border: 2px solid #70c9c0;
-      background-color: #70c9c0;
+      color: #f5f5f5;
+      font-family: "SpaceMono-Regular", monospace;
+      font-size: 20px;
+      height: 46px;
+      line-height: 40px;
       padding-left: 20px;
       padding-right: 20px;
       transition: all 0.1s linear; }
       #wrapper form .clear input[type='submit']:hover {
-        cursor: pointer;
+        background-color: #46b9ad;
         border: 2px solid #46b9ad;
-        background-color: #46b9ad; }
+        cursor: pointer; }
 
 @media screen and (max-width: 800px) {
   body #background .svg-wrap {
@@ -197,11 +201,11 @@ body {
     width: 130px; }
   body #background svg {
     float: left;
-    width: 120px;
-    height: 120px; }
+    height: 120px;
+    width: 120px; }
   body #wrapper #presents-wrapper {
-    padding-top: 20vh;
-    margin-top: 5vh; }
+    margin-top: 5vh;
+    padding-top: 20vh; }
     body #wrapper #presents-wrapper #dummy {
       width: 45vw; }
   body #wrapper .build-your-own {
@@ -209,10 +213,10 @@ body {
     top: 17vh; }
     body #wrapper .build-your-own span {
       height: 400px;
-      position: absolute;
-      width: 20px;
       left: 0px;
-      top: 100px; }
+      position: absolute;
+      top: 100px;
+      width: 20px; }
     body #wrapper .build-your-own #char1 {
       transform: rotate(-27.71429deg); }
     body #wrapper .build-your-own #char2 {
@@ -251,8 +255,8 @@ body {
     height: 60px;
     width: 55px; }
   body #background svg {
-    width: 60px;
-    height: 60px; }
+    height: 60px;
+    width: 60px; }
   body .logo img {
     width: 70px; }
   body #wrapper #dummy {
@@ -302,8 +306,8 @@ body {
     width: 80px; }
   body #background svg {
     float: left;
-    width: 80px;
-    height: 80px; }
+    height: 80px;
+    width: 80px; }
   body #wrapper #dummy {
     height: 70px; }
   body #wrapper #presents-wrapper {
@@ -342,11 +346,11 @@ body {
   body #wrapper #hackathon-wrapper #hackathon {
     font-size: 4rem; }
   body #wrapper #mc_embed_signup form #mce-EMAIL {
-    width: 90vw;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    width: 90vw; }
   body #wrapper #mc_embed_signup form #mc-embedded-subscribe {
-    margin-top: 10px;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px;
+    margin-top: 10px; } }
 @media screen and (max-width: 360px) {
   body #wrapper #dummy {
     height: 40px; }

@@ -25,7 +25,6 @@ body
 	margin: 0
 
 $primary-font-stack: 'Avenir', sans-serif
-// $secondary-font-stack: 'FiraCode-Regular', monospace
 $secondary-font-stack: 'SpaceMono-Regular', monospace
 
 $green: #70c9c0
@@ -243,13 +242,11 @@ $transition: all .1s linear
 					#char#{$i}
 						+rotate-text($i, $angle-span-800, $angle-offset-800)
 
-			#hackathon-wrapper
-				#hackathon
-					font-size: 7rem
+			#hackathon-wrapper #hackathon
+				font-size: 7rem
 
-			form
-				input[type='email']
-					width: 50vw
+			form input[type='email']
+				width: 50vw
 
 @media screen and (max-width: 621px)
 	body
@@ -263,9 +260,8 @@ $transition: all .1s linear
 				height: $confetti-size-621
 				width: $confetti-size-621
 
-		.logo
-			img
-				width: 70px
+		.logo img
+			width: 70px
 
 		#wrapper
 			#dummy
@@ -278,9 +274,8 @@ $transition: all .1s linear
 					#char#{$i}
 						+rotate-text($i, $angle-span-621, $angle-offset-621)
 
-			#hackathon-wrapper
-				#hackathon
-					font-size: 4rem
+			#hackathon-wrapper #hackathon
+				font-size: 4rem
 
 			form
 				margin-top: 10px
@@ -318,19 +313,17 @@ $transition: all .1s linear
 					#char#{$i}
 						+rotate-text($i, $angle-span-420, $angle-offset-420)
 
-			#hackathon-wrapper
-				#hackathon
-					font-size: 4rem
+			#hackathon-wrapper #hackathon
+				font-size: 4rem
 
-			#mc_embed_signup
-				form
-					#mce-EMAIL
-						margin-bottom: 20px
-						width: 90vw
+			#mc_embed_signup form
+				#mce-EMAIL
+					margin-bottom: 20px
+					width: 90vw
 
-					#mc-embedded-subscribe
-						margin-bottom: 20px
-						margin-top: 10px
+				#mc-embedded-subscribe
+					margin-bottom: 20px
+					margin-top: 10px
 
 
 @media screen and (max-width: 360px)
@@ -342,6 +335,5 @@ $transition: all .1s linear
 			.build-your-own
 				top: 6vh
 
-			#hackathon-wrapper
-				#hackathon
-					font-size: 3rem
+			#hackathon-wrapper #hackathon
+				font-size: 3rem

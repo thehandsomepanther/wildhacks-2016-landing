@@ -1,4 +1,4 @@
-var confetti_rect, W, H, window_center, PAD, screen_elements, COLS, ROWS, TOTAL_CONFETTI;
+var confetti_rect, W, H, window_center, PAD, screen_elements, COLS, ROWS, TOTAL_CONFETTI, rect;
 
 var background = document.getElementById("background");
 var background_rect = background.getBoundingClientRect();
@@ -13,7 +13,7 @@ var COLORS = ["green", "blue", "yellow", "purple", "orange", "red"];
 var RAD_TO_DEG = 180/Math.PI;
 
 var ANGLE_NOISE = 25;
-var POSITION_NOISE_X = 20;
+var POSITION_NOISE_X = 15;
 var POSITION_NOISE_Y = 20;
 
 setup();
@@ -50,7 +50,7 @@ function setup() {
     getCollisionArea(document.getElementById("dummy").getBoundingClientRect(), PAD),
     getCollisionArea(document.getElementById("hackathon").getBoundingClientRect(), PAD),
     getCollisionArea(document.getElementById("mce-EMAIL").getBoundingClientRect(), PAD),
-    getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), PAD),
+    getCollisionArea(document.getElementById("mc-embedded-subscribe").getBoundingClientRect(), PAD)
   ];
 
   confetti_rect = getConfettiSize();
@@ -81,10 +81,25 @@ function getConfettiSize() {
   return dummy_rect;
 }
 
+function calcAngle(vector) {
+  return angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG;
+}
+
 function resetBackground(center) {
   removeChildren(background);
   setup();
   createBackground();
+}
+
+function collide(a, b) {
+  if (!b) b = rect;
+
+  return !(
+    ((a.top + a.height) < (rect.top)) ||
+    (a.top > (rect.top + rect.height)) ||
+    ((a.left + a.width) < rect.left) ||
+    (a.left > (rect.left + rect.width))
+  );
 }
 
 function createBackground() {
@@ -96,16 +111,11 @@ function createBackground() {
 
     background.appendChild(new_confetti);
 
-    var rect = new_confetti.getBoundingClientRect();
+    rect = new_confetti.getBoundingClientRect();
 
     if ( screen_elements.map(
       function(a) {
-        return !(
-          ((a.top + a.height) < (rect.top)) ||
-          (a.top > (rect.top + rect.height)) ||
-          ((a.left + a.width) < rect.left) ||
-          (a.left > (rect.left + rect.width))
-        );
+        return collide(a);
       }
     ).reduce(or) ) {
       var this_confetti = document.getElementById("new-confetti");
@@ -123,16 +133,16 @@ function createBackground() {
         y: window_center.y - rect_center.y
       }
 
-      var position_adjustment = Math.floor(Math.random() * 100) % POSITION_NOISE_X - POSITION_NOISE_X;
+      var position_adjustment = randIntLessThan(POSITION_NOISE_X) * 2 - POSITION_NOISE_X;
 
-      new_confetti.style.marginLeft = 0 + "px";
-      position_adjustment = Math.floor(Math.random() * 100) % POSITION_NOISE_Y - POSITION_NOISE_Y;
-      new_confetti.style.marginTop = position_adjustment + "px";
+      new_confetti.style.marginLeft = position_adjustment + "px";
+      position_adjustment = randIntLessThan(POSITION_NOISE_Y) * 2 - POSITION_NOISE_Y;
+      // new_confetti.style.marginTop = position_adjustment + "px";
 
       var angle_adjustment = 0;
-      var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270;
+      var angle = calcAngle(vector);
 
-      var angle_adjustment = Math.floor(Math.random() * 100) % ANGLE_NOISE - ANGLE_NOISE;
+      var angle_adjustment = randIntLessThan(ANGLE_NOISE) * 2 - ANGLE_NOISE;
       angle += angle_adjustment
       new_confetti.style.transform = "rotate(" + angle + "deg)";
     }
@@ -146,7 +156,7 @@ var up = "first";
 var THETA = 10;
 
 function wiggle() {
-  for (i = 0; i < confettis.length; i++) {
+  for (var i = 0; i < confettis.length; i++) {
     var angle = parseFloat(confettis[i].style.transform.replace("rotate(", "").replace("deg)", ""));
     angle += (up ? THETA : -THETA)
     confettis[i].style.transform = "rotate(" + angle + "deg)";
@@ -156,7 +166,7 @@ function wiggle() {
 }
 
 function randomWiggle() {
-  for (i = 0; i < confettis.length; i++) {
+  for (var i = 0; i < confettis.length; i++) {
     var angle = parseFloat(confettis[i].style.transform.replace("rotate(", "").replace("deg)", ""));
     angle += (Math.ceil(Math.random() - .5) ? THETA : -THETA)
     confettis[i].style.transform = "rotate(" + angle + "deg)";
@@ -164,7 +174,7 @@ function randomWiggle() {
 }
 
 function track(center) {
-  for (i = 0; i < confettis.length; i++) {
+  for (var i = 0; i < confettis.length; i++) {
     var this_confetti = confettis[i];
 
     var this_confetti_rect = this_confetti.getBoundingClientRect();
@@ -174,8 +184,45 @@ function track(center) {
       y: center.y - (this_confetti_rect.top + this_confetti_rect.height / 2)
     }
 
-    var angle = Math.atan2(vector.y, vector.x) * RAD_TO_DEG + 270;
-    confettis[i].style.transform = "rotate(" + angle + "deg)";
+    confettis[i].style.transform = "rotate(" + calcAngle(vector) + "deg)";
+  }
+}
+
+function fall() {
+  for (i = 0; i < confettis.length; i++) {
+
+  }
+}
+
+function sprinkle() {
+  var svg = document.getElementsByTagName('svg');
+  
+  for (var i = 0; i < svg.length; i++) {
+    svg[i].style.visibility = "hidden";
+  }
+
+  var p = confettis.length;
+
+  setInterval(function() {
+    for (var i = 0; i < svg.length; i++) {
+      if (randIntLessThan(p)/svg.length > 1) {
+        svg[i].style.visibility = "visible";
+      }  
+    }
+  }, 250);
+}
+
+function fadeIn() {
+  var svg = document.getElementsByTagName('svg');
+  var svg_wrap = document.getElementsByClassName('svg-wrap');
+  
+  for (var i = 0; i < svg.length; i++) {
+    svg[i].style.visibility = "hidden";
+
+    svg_wrap[i].addEventListener("mouseover", function(e){
+      e.target.style.visibility = "visible";
+      console.log("mouse")
+    });
   }
 }
 
@@ -219,6 +266,8 @@ switch(randIntLessThan(6)) {
   //   break;
 
   default:
+    // sprinkle();
+    // fadeIn();
     
 }
 

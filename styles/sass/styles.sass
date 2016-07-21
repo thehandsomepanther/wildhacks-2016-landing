@@ -9,8 +9,11 @@ $angle-offset-800: -32deg
 $angle-span-621: 45deg
 $angle-offset-621: -24deg
 
-$angle-span-420: 35deg
-$angle-offset-420: -19deg
+$angle-span-420: 45deg
+$angle-offset-420: -24deg
+
+$angle-span-360: 35deg
+$angle-offset-360: -19deg
 
 $confetti-size: 90px
 $confetti-size-800: 120px
@@ -23,6 +26,9 @@ $confetti-size-420: 80px
 body
 	padding: 0
 	margin: 0
+	height: 100vh
+	width: 100vw
+	overflow: hidden
 
 $primary-font-stack: 'Avenir', sans-serif
 $secondary-font-stack: 'SpaceMono-Regular', monospace
@@ -52,7 +58,6 @@ $transition: all .1s linear
 	background-color: $whitesmoke
 	height: 105vh
 	left: -5vw
-	overflow-y: hidden
 	position: absolute
 	top: -5vh
 	width: 130vw
@@ -166,6 +171,17 @@ $transition: all .1s linear
 			font-size: 9rem
 			font-style: normal
 			font-weight: 900
+
+	#time-place p
+		margin-top: 0
+		font-size: 1.5rem
+
+		#time
+			color: $green
+		#pipe
+			color: $blue
+		#place
+			color: $purple
 
 	form
 		input[type='email']
@@ -307,8 +323,8 @@ $transition: all .1s linear
 				padding-top: 20vh
 
 			.build-your-own
-				font-size: 1.5rem
-				top: 15vh
+				font-size: 2rem
+				top: 11.5vh
 				@for $i from 1 through $num-letters
 					#char#{$i}
 						+rotate-text($i, $angle-span-420, $angle-offset-420)
@@ -333,7 +349,14 @@ $transition: all .1s linear
 				height: 40px
 
 			.build-your-own
-				top: 6vh
+				font-size: 1.5rem
+				top: 15vh
+				@for $i from 1 through $num-letters
+					#char#{$i}
+						+rotate-text($i, $angle-span-360, $angle-offset-360)
 
 			#hackathon-wrapper #hackathon
 				font-size: 3rem
+
+			#time-place p
+				font-size: 1rem

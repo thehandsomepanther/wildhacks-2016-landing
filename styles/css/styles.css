@@ -49,6 +49,7 @@ body {
 
 #wrapper {
   font-family: "SpaceMono-Regular", monospace;
+  font-style: italic;
   position: relative;
   text-align: center;
   z-index: 100; }
@@ -72,7 +73,7 @@ body {
   #wrapper .build-your-own {
     font-family: "SpaceMono-Regular", monospace;
     font-size: 3rem;
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     left: 49%;
     position: absolute;
@@ -165,9 +166,12 @@ body {
       font-weight: 900; }
   #wrapper #time-place p {
     margin-top: 0;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    font-style: normal; }
     #wrapper #time-place p #time {
       color: #70c9c0; }
+      #wrapper #time-place p #time::after {
+        content: " |"; }
     #wrapper #time-place p #pipe {
       color: #9fc9eb; }
     #wrapper #time-place p #place {
@@ -304,6 +308,10 @@ body {
       transform: rotate(21deg); }
   body #wrapper #hackathon-wrapper #hackathon {
     font-size: 4rem; }
+  body #wrapper #time-place #time {
+    display: block; }
+    body #wrapper #time-place #time::after {
+      content: " "; }
   body #wrapper form {
     margin-top: 10px; }
     body #wrapper form input[type='email'] {
@@ -325,7 +333,7 @@ body {
     padding-top: 20vh; }
   body #wrapper .build-your-own {
     font-size: 2rem;
-    top: 11.5vh; }
+    top: 13vh; }
     body #wrapper .build-your-own #char1 {
       transform: rotate(-20.78571deg); }
     body #wrapper .build-your-own #char2 {
@@ -363,11 +371,13 @@ body {
     margin-bottom: 20px;
     margin-top: 10px; } }
 @media screen and (max-width: 360px) {
+  body #wrapper #presents-wrapper {
+    font-size: 1.2em; }
   body #wrapper #dummy {
     height: 40px; }
   body #wrapper .build-your-own {
     font-size: 1.5rem;
-    top: 15vh; }
+    top: 6.5vh; }
     body #wrapper .build-your-own #char1 {
       transform: rotate(-16.5deg); }
     body #wrapper .build-your-own #char2 {

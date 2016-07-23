@@ -99,6 +99,7 @@ $transition: all .1s linear
 
 #wrapper
 	font-family: $secondary-font-stack
+	font-style: italic
 	position: relative
 	text-align: center
 	z-index: 100
@@ -127,7 +128,7 @@ $transition: all .1s linear
 	.build-your-own
 		font-family: $secondary-font-stack
 		font-size: 3rem
-		font-style: italic
+		font-style: normal
 		font-weight: 700
 		left: 49%
 		position: absolute
@@ -175,9 +176,14 @@ $transition: all .1s linear
 	#time-place p
 		margin-top: 0
 		font-size: 1.5rem
+		font-style: normal
 
 		#time
 			color: $green
+
+			&::after
+				content: " |"
+
 		#pipe
 			color: $blue
 		#place
@@ -293,6 +299,12 @@ $transition: all .1s linear
 			#hackathon-wrapper #hackathon
 				font-size: 4rem
 
+			#time-place #time
+				display: block
+
+				&::after
+					content: " "
+
 			form
 				margin-top: 10px
 
@@ -324,7 +336,7 @@ $transition: all .1s linear
 
 			.build-your-own
 				font-size: 2rem
-				top: 11.5vh
+				top: 13vh
 				@for $i from 1 through $num-letters
 					#char#{$i}
 						+rotate-text($i, $angle-span-420, $angle-offset-420)
@@ -345,12 +357,15 @@ $transition: all .1s linear
 @media screen and (max-width: 360px)
 	body
 		#wrapper
+			#presents-wrapper
+				font-size: 1.2em
+
 			#dummy
 				height: 40px
 
 			.build-your-own
 				font-size: 1.5rem
-				top: 15vh
+				top: 6.5vh
 				@for $i from 1 through $num-letters
 					#char#{$i}
 						+rotate-text($i, $angle-span-360, $angle-offset-360)

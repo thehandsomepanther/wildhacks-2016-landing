@@ -188,38 +188,36 @@ function track(center) {
   }
 }
 
-function fall() {
-  for (i = 0; i < confettis.length; i++) {
-
-  }
-}
-
 function sprinkle() {
-  var svg = document.getElementsByTagName('svg');
+  var svg = document.getElementsByClassName('svg-wrap');
   
   for (var i = 0; i < svg.length; i++) {
     svg[i].style.visibility = "hidden";
   }
 
-  var p = confettis.length;
-
-  setInterval(function() {
-    for (var i = 0; i < svg.length; i++) {
-      if (randIntLessThan(p)/svg.length > 1) {
-        svg[i].style.visibility = "visible";
-      }  
+  var p = Array.apply(null, {length: svg.length}).map(Number.call, Number);
+  var animation = setInterval(function() {
+    for (var i = 0; i < p.length; i++) {
+      if (randIntLessThan(p.length/3) == 0) {
+        svg[p[i]].style.visibility = "visible";
+        p.splice(i, 1);
+      }
+    } 
+    if (!p.length) {
+      clearInterval(animation);
+      setInterval(wiggle, 500);
     }
-  }, 250);
+  }, 100);
 }
 
 function fadeIn() {
   var svg = document.getElementsByTagName('svg');
   var svg_wrap = document.getElementsByClassName('svg-wrap');
   
-  for (var i = 0; i < svg.length; i++) {
-    svg[i].style.visibility = "hidden";
+  for (var i = 0; i < svg_wrap.length; i++) {
+    svg_wrap[i].style.visibility = "hidden";
 
-    svg_wrap[i].addEventListener("mouseover", function(e){
+    svg_wrap[i].addEventListener("click", function(e){
       e.target.style.visibility = "visible";
       console.log("mouse")
     });
@@ -234,40 +232,38 @@ var mouse_pos = window_center;
 var new_mouse_pos = mouse_pos;
 
 switch(randIntLessThan(6)) {
-  // case 5:
-  //   setInterval(randomWiggle, 500);
-  //   break;
+  case 5:
+    setInterval(randomWiggle, 500);
+    break;
 
-  // case 4:
-  //   window.addEventListener("mousemove", function(e) {
-  //     new_mouse_pos = {
-  //       x: e.clientX,
-  //       y: e.clientY        
-  //     }
+  case 4:
+    window.addEventListener("mousemove", function(e) {
+      new_mouse_pos = {
+        x: e.clientX,
+        y: e.clientY        
+      }
 
-  //     track(new_mouse_pos);
-  //   });
-  //   break;
+      track(new_mouse_pos);
+    });
+    break;
 
-  // case 3:
-  //   window.addEventListener("keydown", function(e) {
-  //     resetBackground();
-  //   });
-  //   break;
+  case 3:
+    window.addEventListener("keydown", function(e) {
+      resetBackground();
+    });
+    break;
 
-  // case 2:
-  //   setInterval(function() {
-  //     resetBackground();
-  //   }, 500);
-  //   break;
+  case 2:
+    setInterval(function() {
+      resetBackground();
+    }, 500);
+    break;
 
-  // case 1:
-  //   setInterval(wiggle, 500);
-  //   break;
+  case 1:
+    setInterval(wiggle, 500);
+    break;
 
   default:
-    // sprinkle();
-    // fadeIn();
-    
+    sprinkle();
 }
 

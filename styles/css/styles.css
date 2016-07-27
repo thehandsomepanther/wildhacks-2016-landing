@@ -198,7 +198,11 @@
   #wrapper form .clear {
     display: inline-block; }
     #wrapper form .clear input[type='submit'] {
+      -webkit-appearance: none;
       background-color: #70c9c0;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
       border-radius: 4px;
       border: 2px solid #70c9c0;
       color: #f5f5f5;
